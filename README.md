@@ -6,7 +6,7 @@
 2. Make sure you have [yarn](https://yarnpkg.com) installed.
 3. Clone this repo
 4. Inside the repo directory, run `yarn install`.
-5. Create a file under `public/config.js` with the following code:
+5. Create a file under `public/config/env-config.js` with the following code:
 
 ```js
 window.APP_ENV = {
@@ -37,7 +37,7 @@ main({
 ## Building production files
 
 1. Run `yarn build`.
-2. Copy the config file to `build/config.js`.
+2. Copy the config file to `build/config/env-config.js`.
 3. Serve the `build` directory.
 
 ## Hosting files with Firebase
