@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import { AppConfig } from "types.d/AppConfig";
 import { Page } from "types.d/Page";
 import { State } from "types.d/State";
 import { SendVerificationCode } from "components/SendVerificationCode";
@@ -8,7 +9,7 @@ import { RequestVerificationCode } from "components/RequestVerificationCode";
 import { initApp } from "ducks/app";
 
 interface AppProps {
-  config: any;
+  config: AppConfig;
 }
 
 export function App({ config }: AppProps) {
