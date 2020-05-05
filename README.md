@@ -26,11 +26,7 @@ dev tools:
 
 ```js
 main({
-  phoneNumber: "+15551112222",
-  firebase: {
-    apiKey: window.APP_ENV.FIREBASE_WEB_API_KEY,
-    projectId: window.APP_ENV.FIREBASE_PROJECT_ID,
-  },
+  phoneNumber: "+15551112222"
 });
 ```
 
