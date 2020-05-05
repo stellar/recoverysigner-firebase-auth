@@ -56,6 +56,7 @@ export function RequestVerificationCode() {
           <label>
             <input
               maxLength={6}
+              autoComplete="one-time-code"
               type="text"
               pattern="^\d{6}$"
               onChange={({ target: { value } }) => setVerificationCode(value)}
