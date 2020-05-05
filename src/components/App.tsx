@@ -35,5 +35,12 @@ export function App({ config }: AppProps) {
     }
   }, [appDidLoad, currentPage]);
 
-  return component;
+  return (
+    <>
+      <div className="text-center logo-container">
+        <img src={(window as any).APP_ENV.LOGO_URL} className="logo" alt="" />
+      </div>
+      {component}
+    </>
+  );
 }
