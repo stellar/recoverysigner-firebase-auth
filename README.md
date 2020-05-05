@@ -25,13 +25,7 @@ To trigger the auth process in the browser, run the following script on the web
 dev tools:
 
 ```js
-main({
-  phoneNumber: "+15551112222",
-  firebase: {
-    apiKey: window.APP_ENV.FIREBASE_WEB_API_KEY,
-    projectId: window.APP_ENV.FIREBASE_PROJECT_ID,
-  },
-});
+main({ phoneNumber: "+15551112222" });
 ```
 
 ## Building production files
