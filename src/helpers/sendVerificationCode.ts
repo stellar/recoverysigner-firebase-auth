@@ -64,7 +64,11 @@ export async function sendVerificationCode({
           break;
 
         default:
-          message = JSON.parse(message).error.message;
+          try {
+            message = JSON.parse(message).error.message;
+          } catch (anotherError) {
+            message = error.toString();
+          }
       }
     }
 
