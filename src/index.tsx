@@ -15,14 +15,10 @@ import { AppConfig } from "types.d/AppConfig";
     projectId: appEnv.FIREBASE_PROJECT_ID,
   });
 
-  const recaptchaVerifier = new firebase.auth.RecaptchaVerifier("recaptcha", {
-    size: "invisible",
-  });
-
   ReactDOM.render(
     <React.StrictMode>
       <Provider store={store}>
-        <App config={{ ...config, recaptchaVerifier }} />
+        <App config={{ ...config }} />
       </Provider>
     </React.StrictMode>,
     document.getElementById("root"),

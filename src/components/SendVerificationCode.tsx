@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import { SEND_VERIFICATION_CODE } from "ducks/firebase";
 import { setPage } from "ducks/page";
 import { sendVerificationCode } from "helpers/sendVerificationCode";
+import { useStatus } from "hooks/useStatus";
 import { Page } from "types.d/Page";
 import { State } from "types.d/State";
 
@@ -10,23 +12,25 @@ const DELAY = 3000;
 
 export function SendVerificationCode() {
   const dispatch = useDispatch();
+  const status = useStatus(SEND_VERIFICATION_CODE);
   const [isLoading, setIsLoading] = useState(true);
-  const {
-    appDidLoad,
-    verificationId,
-    phoneNumber,
-    recaptchaVerifier,
-  } = useSelector((state: State) => state);
+  const { appDidLoad, verificationId, phoneNumber } = useSelector(
+    (state: State) => state,
+  );
 
-  useEffect(() => {
+  const handleSendVerificationCode = () => {
     if (appDidLoad) {
       sendVerificationCode({
         phoneNumber,
-        recaptchaVerifier,
         dispatch,
       });
     }
-  }, [appDidLoad, phoneNumber, recaptchaVerifier, dispatch]);
+  };
+
+  useEffect(() => {
+    handleSendVerificationCode();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [appDidLoad, phoneNumber, dispatch]);
 
   useEffect(() => {
     if (verificationId) {
@@ -52,9 +56,11 @@ export function SendVerificationCode() {
         </div>
       )}
 
-      {!isLoading && (
+      {status.error && <p>Error: {status.error.message}</p>}
+
+      {!isLoading && !status.error && (
         <p className="text-center">
-          <button className="button">
+          <button className="button" onClick={handleSendVerificationCode}>
             <span>Send verification code</span>
           </button>
         </p>
