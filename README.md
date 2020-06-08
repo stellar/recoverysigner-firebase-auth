@@ -11,7 +11,7 @@
 ```js
 window.APP_ENV = {
   FIREBASE_WEB_API_KEY: "your firebase web api key",
-  FIREBASE_PROJECT_ID: "your firebaes project id",
+  FIREBASE_PROJECT_ID: "your firebase project id",
   TEXT_COLOR: "#fff",
   BACKGROUND_START_COLOR: "#6ececb",
   BACKGROUND_END_COLOR: "#59a4ae",
