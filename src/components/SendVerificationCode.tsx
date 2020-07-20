@@ -39,7 +39,8 @@ export function SendVerificationCode() {
   }, [verificationId, dispatch]);
 
   // We automatically trigger the recaptcha verification. To avoid flashing the
-  // "Send verification code" button, we display the button DELAY has passed.
+  // "Send verification code" button, we display the button when DELAY has
+  // passed.
   useEffect(() => {
     const tid = setTimeout(() => {
       setIsLoading(false);

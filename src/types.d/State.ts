@@ -7,6 +7,7 @@ export interface State {
   currentPage: Page;
   appDidLoad: boolean;
   statuses: { [key: string]: Status };
+  locale: string;
 
   firebase: FirebaseAppConfig;
   recaptchaVerifier: firebase.auth.RecaptchaVerifier;
