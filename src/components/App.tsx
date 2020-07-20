@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { I18nProvider } from "@lingui/react";
 
 import { AppConfig } from "types.d/AppConfig";
 import { Page } from "types.d/Page";
@@ -36,5 +35,5 @@ export function App({ config }: AppProps) {
     }
   }, [appDidLoad, currentPage]);
 
-  return <I18nProvider language={config.locale}>{component}</I18nProvider>;
+  return component;
 }
