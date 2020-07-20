@@ -12,7 +12,6 @@ const initialState: State = {
   appDidLoad: false,
   phoneNumber: "",
   currentPage: Page.sendVerificationCode,
-  locale: "en",
   statuses: {},
 } as State;
 
