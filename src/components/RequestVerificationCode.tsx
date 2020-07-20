@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Trans } from "@lingui/macro";
 
 import { State } from "types.d/State";
 import { Page } from "types.d/Page";
@@ -41,7 +42,7 @@ export function RequestVerificationCode() {
     return (
       <div className="panel">
         <p className="text-center text-large">
-          You’ve been verified! Please wait.
+          <Trans>You’ve been verified! Please wait.</Trans>
         </p>
       </div>
     );
@@ -51,7 +52,9 @@ export function RequestVerificationCode() {
     <div className="panel">
       {!status.isSuccess && (
         <div>
-          <p className="text-center">We’ve sent you a verification code:</p>
+          <p className="text-center">
+            <Trans>We’ve sent you a verification code:</Trans>
+          </p>
 
           <label>
             <input
@@ -72,7 +75,9 @@ export function RequestVerificationCode() {
       {!status.isLoading && (
         <p className="text-center">
           <button className="button-link" type="button" onClick={handleResend}>
-            <span>Resend</span>
+            <span>
+              <Trans>Resend</Trans>
+            </span>
           </button>
         </p>
       )}

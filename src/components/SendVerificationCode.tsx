@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Trans } from "@lingui/macro";
 
 import { SEND_VERIFICATION_CODE } from "ducks/firebase";
 import { setPage } from "ducks/page";
@@ -53,7 +54,9 @@ export function SendVerificationCode() {
     <div className="panel">
       {isLoading && (
         <div className="text-center text-large">
-          <p>Please wait…</p>
+          <p>
+            <Trans>Please wait…</Trans>
+          </p>
         </div>
       )}
 
@@ -62,7 +65,9 @@ export function SendVerificationCode() {
       {!isLoading && !status.error && (
         <p className="text-center">
           <button className="button" onClick={handleSendVerificationCode}>
-            <span>Send verification code</span>
+            <span>
+              <Trans>Send verification code</Trans>
+            </span>
           </button>
         </p>
       )}
