@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
+import { I18nProvider } from "@lingui/react";
 
 import "./index.css";
 import { App } from "components/App";
@@ -9,6 +10,7 @@ import { AppConfig } from "types.d/AppConfig";
 
 (window as any).main = function main(config: AppConfig) {
   const appEnv = (window as any).APP_ENV;
+  const language = config.language || "en";
 
   firebase.initializeApp({
     apiKey: appEnv.FIREBASE_WEB_API_KEY,
@@ -18,7 +20,9 @@ import { AppConfig } from "types.d/AppConfig";
   ReactDOM.render(
     <React.StrictMode>
       <Provider store={store}>
-        <App config={{ ...config }} />
+        <I18nProvider language={language}>
+          <App config={{ ...config }} />
+        </I18nProvider>
       </Provider>
     </React.StrictMode>,
     document.getElementById("root"),
