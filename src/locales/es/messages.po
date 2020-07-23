@@ -2,16 +2,21 @@ msgid ""
 msgstr ""
 "POT-Creation-Date: 2020-07-20 15:50-0700\n"
 "Mime-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: es\n"
-"Project-Id-Version: \n"
+"Project-Id-Version: vibrant-app\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: \n"
+"PO-Revision-Date: 2020-07-22 23:58\n"
 "Last-Translator: \n"
-"Language-Team: \n"
-"Plural-Forms: \n"
+"Language-Team: Spanish\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: vibrant-app\n"
+"X-Crowdin-Project-ID: 409066\n"
+"X-Crowdin-Language: es-ES\n"
+"X-Crowdin-File: messages.po\n"
+"X-Crowdin-File-ID: 64\n"
 
 #: src/helpers/getFirebaseError.ts:27
 #: src/helpers/getFirebaseError.ts:32
@@ -28,15 +33,15 @@ msgstr "Por favor provee un número de teléfono válido."
 
 #: src/components/SendVerificationCode.tsx:44
 msgid "Please wait…"
-msgstr ""
+msgstr "Por favor espera…"
 
 #: src/components/RequestVerificationCode.tsx:54
 msgid "Resend"
-msgstr ""
+msgstr "Reenviar"
 
 #: src/components/SendVerificationCode.tsx:53
 msgid "Send verification code"
-msgstr ""
+msgstr "Enviar código de verificación"
 
 #: src/helpers/getFirebaseError.ts:9
 msgid "The confirmation code you provided is invalid."
@@ -52,11 +57,11 @@ msgstr "Este correo electrónico ya está en uso. Por favor usa otro."
 
 #: src/components/RequestVerificationCode.tsx:41
 msgid "We’ve sent you a verification code:"
-msgstr ""
+msgstr "Te hemos enviado un código de verificación:"
 
 #: src/components/RequestVerificationCode.tsx:34
 msgid "You’ve been verified! Please wait."
-msgstr ""
+msgstr "¡Has sido verificado! Por favor espera."
 
 #: src/helpers/getFirebaseError.ts:14
 msgid "You’ve tried to do that too many times. Please wait a while and try again!"

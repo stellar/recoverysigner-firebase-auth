@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import { I18nProvider } from "@lingui/react";
 
 import "./index.css";
+import { i18n } from "config/i18n";
 import { App } from "components/App";
 import { store } from "ducks/store";
 import { AppConfig } from "types.d/AppConfig";
@@ -17,10 +18,12 @@ import { AppConfig } from "types.d/AppConfig";
     projectId: appEnv.FIREBASE_PROJECT_ID,
   });
 
+  i18n.activate(language);
+
   ReactDOM.render(
     <React.StrictMode>
       <Provider store={store}>
-        <I18nProvider language={language}>
+        <I18nProvider i18n={i18n} language={language}>
           <App config={{ ...config }} />
         </I18nProvider>
       </Provider>
