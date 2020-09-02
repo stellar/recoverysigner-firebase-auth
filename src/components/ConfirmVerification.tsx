@@ -9,7 +9,7 @@ import { useStatus } from "hooks/useStatus";
 import { CONFIRM_VERIFICATION_CODE } from "ducks/firebase";
 import { setPage } from "ducks/page";
 
-export function RequestVerificationCode() {
+export function ConfirmVerification() {
   const dispatch = useDispatch();
   const [verificationCode, setVerificationCode] = useState("");
   const { verificationId, idToken } = useSelector((state: State) => state);
@@ -35,7 +35,7 @@ export function RequestVerificationCode() {
   }, [status.hasLoaded, status.isSuccess, idToken]);
 
   const handleResend = () => {
-    dispatch(setPage(Page.sendVerificationCode));
+    dispatch(setPage(Page.sendVerification));
   };
 
   if (status.isSuccess) {
