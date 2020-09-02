@@ -4,6 +4,8 @@ import { Status } from "types.d/Status";
 
 export interface State {
   phoneNumber: string;
+  email: string;
+  referrerId: string;
   currentPage: Page;
   appDidLoad: boolean;
   statuses: { [key: string]: Status };

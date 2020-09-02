@@ -5,6 +5,7 @@ import { Trans } from "@lingui/macro";
 import { SEND_VERIFICATION_CODE } from "ducks/firebase";
 import { setPage } from "ducks/page";
 import { sendVerificationCode } from "helpers/sendVerificationCode";
+import { sendVerificationEmail } from "helpers/sendVerificationEmail";
 import { useStatus } from "hooks/useStatus";
 import { Page } from "types.d/Page";
 import { State } from "types.d/State";
@@ -15,23 +16,36 @@ export function SendVerification() {
   const dispatch = useDispatch();
   const status = useStatus(SEND_VERIFICATION_CODE);
   const [isLoading, setIsLoading] = useState(true);
-  const { appDidLoad, verificationId, phoneNumber } = useSelector(
-    (state: State) => state,
-  );
+  const {
+    appDidLoad,
+    verificationId,
+    phoneNumber,
+    email,
+    referrerId,
+  } = useSelector((state: State) => state);
 
   const handleSendVerificationCode = () => {
     if (appDidLoad) {
-      sendVerificationCode({
-        phoneNumber,
-        dispatch,
-      });
+      if (phoneNumber) {
+        sendVerificationCode({
+          phoneNumber,
+          dispatch,
+        });
+      }
+      if (email && referrerId) {
+        sendVerificationEmail({
+          email,
+          referrerId,
+          dispatch,
+        });
+      }
     }
   };
 
   useEffect(() => {
     handleSendVerificationCode();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [appDidLoad, phoneNumber, dispatch]);
+  }, [appDidLoad, phoneNumber, email, referrerId, dispatch]);
 
   useEffect(() => {
     if (verificationId) {
@@ -66,7 +80,8 @@ export function SendVerification() {
         <p className="text-center">
           <button className="button" onClick={handleSendVerificationCode}>
             <span>
-              <Trans>Send verification code</Trans>
+              {phoneNumber && <Trans>Send verification code</Trans>}
+              {email && referrerId && <Trans>Send verification email</Trans>}
             </span>
           </button>
         </p>

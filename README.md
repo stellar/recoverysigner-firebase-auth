@@ -28,6 +28,16 @@ dev tools:
 main({ phoneNumber: "+15551112222" });
 ```
 
+or
+
+```js
+main({
+  email: "jordyn@dispostable.com",
+  // Vibrant needs to pass referrerId in, since it changes depending on the env
+  referrerId: "io.sunship.app",
+});
+```
+
 ## Building production files
 
 1. Run `yarn build`.

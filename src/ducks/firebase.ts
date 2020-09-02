@@ -1,14 +1,21 @@
 import { State } from "types.d/State";
 
-type Actions = SendVerificationCodeAction | ConfirmVerificationCodeAction;
+type Actions =
+  | SendVerificationCodeAction
+  | SendVerificationEmailAction
+  | ConfirmVerificationCodeAction;
 
 export const CONFIRM_VERIFICATION_CODE = "firebase/CONFIRM_VERIFICATION_CODE";
 export const SEND_VERIFICATION_CODE = "firebase/SEND_VERIFICATION_CODE";
+export const SEND_VERIFICATION_EMAIL = "firebase/SEND_VERIFICATION_EMAIL";
 
 export function reducer(state: State, action: Actions) {
   switch (action.type) {
     case SEND_VERIFICATION_CODE:
       return { ...state, ...action.payload };
+
+    case SEND_VERIFICATION_EMAIL:
+      return { ...state };
 
     case CONFIRM_VERIFICATION_CODE:
       return { ...state, ...action.payload };
@@ -32,6 +39,14 @@ export function sendVerificationCode(
   payload: SendVerificationCodePayload,
 ): SendVerificationCodeAction {
   return { type: SEND_VERIFICATION_CODE, payload };
+}
+
+interface SendVerificationEmailAction {
+  type: typeof SEND_VERIFICATION_EMAIL;
+}
+
+export function sendVerificationEmail(): SendVerificationEmailAction {
+  return { type: SEND_VERIFICATION_EMAIL };
 }
 
 interface ConfirmVerificationCodeAction {
