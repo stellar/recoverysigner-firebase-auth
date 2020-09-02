@@ -26,15 +26,15 @@ msgstr "Please fill out the captcha to proceed."
 msgid "Please provide a valid phone number."
 msgstr "Please provide a valid phone number."
 
-#: src/components/SendVerificationCode.tsx:44
+#: src/components/SendVerification.tsx:44
 msgid "Please wait…"
 msgstr "Please wait…"
 
-#: src/components/RequestVerificationCode.tsx:54
+#: src/components/ConfirmVerification.tsx:54
 msgid "Resend"
 msgstr "Resend"
 
-#: src/components/SendVerificationCode.tsx:53
+#: src/components/SendVerification.tsx:53
 msgid "Send verification code"
 msgstr "Send verification code"
 
@@ -50,11 +50,11 @@ msgstr "There was a network connectivity issue. Please try again."
 msgid "This email is already in use. Please use another one."
 msgstr "This email is already in use. Please use another one."
 
-#: src/components/RequestVerificationCode.tsx:41
+#: src/components/ConfirmVerification.tsx:41
 msgid "We’ve sent you a verification code:"
 msgstr "We’ve sent you a verification code:"
 
-#: src/components/RequestVerificationCode.tsx:34
+#: src/components/ConfirmVerification.tsx:34
 msgid "You’ve been verified! Please wait."
 msgstr "You’ve been verified! Please wait."
 
