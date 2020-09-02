@@ -1,4 +1,4 @@
 export enum Page {
-  requestVerificationCode = "requestVerificationCode",
-  sendVerificationCode = "sendVerificationCode",
+  confirmVerification = "confirmVerification",
+  sendVerification = "sendVerification",
 }

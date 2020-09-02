@@ -11,7 +11,7 @@ import { State } from "types.d/State";
 
 const DELAY = 3000;
 
-export function SendVerificationCode() {
+export function SendVerification() {
   const dispatch = useDispatch();
   const status = useStatus(SEND_VERIFICATION_CODE);
   const [isLoading, setIsLoading] = useState(true);
@@ -35,7 +35,7 @@ export function SendVerificationCode() {
 
   useEffect(() => {
     if (verificationId) {
-      dispatch(setPage(Page.requestVerificationCode));
+      dispatch(setPage(Page.confirmVerification));
     }
   }, [verificationId, dispatch]);
 
