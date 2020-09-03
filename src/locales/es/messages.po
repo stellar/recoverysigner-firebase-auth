@@ -31,7 +31,7 @@ msgstr "Por favor completa el captcha para proceder."
 msgid "Please provide a valid phone number."
 msgstr "Por favor provee un número de teléfono válido."
 
-#: src/components/SendVerification.tsx:44
+#: src/components/SendVerification.tsx:54
 msgid "Please wait…"
 msgstr "Por favor espera…"
 
@@ -39,9 +39,13 @@ msgstr "Por favor espera…"
 msgid "Resend"
 msgstr "Reenviar"
 
-#: src/components/SendVerification.tsx:53
+#: src/components/SendVerification.tsx:63
 msgid "Send verification code"
 msgstr "Enviar código de verificación"
+
+#: src/components/SendVerification.tsx:64
+msgid "Send verification email"
+msgstr ""
 
 #: src/helpers/getFirebaseError.ts:9
 msgid "The confirmation code you provided is invalid."

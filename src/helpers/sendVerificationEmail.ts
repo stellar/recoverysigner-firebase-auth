@@ -5,33 +5,35 @@ import {
   sendVerificationEmail as action,
 } from "ducks/firebase";
 import { buildStatus } from "helpers/buildStatus";
+import { DynamicLinkSettings } from "types.d/AppConfig";
 import { StatusType } from "types.d/Status";
 
 interface SendVerificationEmailParams {
   email: string;
-  referrerId: string;
+  dynamicLinkSettings: DynamicLinkSettings;
   dispatch: Dispatch;
 }
 
 export async function sendVerificationEmail({
   email,
-  referrerId,
+  dynamicLinkSettings,
   dispatch,
 }: SendVerificationEmailParams) {
   const setStatus = buildStatus(SEND_VERIFICATION_EMAIL, dispatch);
   setStatus(StatusType.loading);
 
-  const dynamicLinkSettings = {
+  const { referrerId, domain, path } = dynamicLinkSettings;
+  const dynamicLinkConfig = {
     android: { installApp: true, packageName: referrerId },
-    dynamicLinkDomain: "pasapesos.page.link",
+    domain: `${domain}`,
     handleCodeInApp: true,
     iOS: { bundleId: referrerId },
-    url: "https://pasapesos.page.link/email-auth",
+    url: `https://${domain}/${path}`,
   };
 
   firebase
     .auth()
-    .sendSignInLinkToEmail(email, dynamicLinkSettings)
+    .sendSignInLinkToEmail(email, dynamicLinkConfig)
     .then(() => {
       dispatch(action());
       setStatus(StatusType.success);

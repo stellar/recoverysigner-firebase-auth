@@ -21,7 +21,7 @@ export function SendVerification() {
     verificationId,
     phoneNumber,
     email,
-    referrerId,
+    dynamicLinkSettings,
   } = useSelector((state: State) => state);
 
   const handleSendVerificationCode = () => {
@@ -32,10 +32,10 @@ export function SendVerification() {
           dispatch,
         });
       }
-      if (email && referrerId) {
+      if (email && dynamicLinkSettings) {
         sendVerificationEmail({
           email,
-          referrerId,
+          dynamicLinkSettings,
           dispatch,
         });
       }
@@ -45,7 +45,7 @@ export function SendVerification() {
   useEffect(() => {
     handleSendVerificationCode();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [appDidLoad, phoneNumber, email, referrerId, dispatch]);
+  }, [appDidLoad, phoneNumber, email, dispatch]);
 
   useEffect(() => {
     if (verificationId) {
@@ -81,7 +81,7 @@ export function SendVerification() {
           <button className="button" onClick={handleSendVerificationCode}>
             <span>
               {phoneNumber && <Trans>Send verification code</Trans>}
-              {email && referrerId && <Trans>Send verification email</Trans>}
+              {email && <Trans>Send verification email</Trans>}
             </span>
           </button>
         </p>
