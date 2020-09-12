@@ -18,6 +18,8 @@ import { AppConfig } from "types.d/AppConfig";
     projectId: appEnv.FIREBASE_PROJECT_ID,
   });
 
+  firebase.auth().languageCode = language;
+
   i18n.activate(language);
 
   ReactDOM.render(
