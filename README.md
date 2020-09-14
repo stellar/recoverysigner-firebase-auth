@@ -32,8 +32,8 @@ or
 
 ```js
 main({
-  email: "jordyn@dispostable.com",
-  // Vibrant needs to pass in dynamicLinkSettings, they change depending on the env
+  email: "jordyn@example.com",
+  // Client needs to pass in dynamicLinkSettings, they change depending on the env
   dynamicLinkSettings: {
     referrerId: "io.sunship.app",
     domain: "pasapesos.page.link",
