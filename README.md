@@ -28,6 +28,20 @@ dev tools:
 main({ phoneNumber: "+15551112222" });
 ```
 
+or
+
+```js
+main({
+  email: "jordyn@example.com",
+  // Client needs to pass in dynamicLinkSettings, they change depending on the env
+  dynamicLinkSettings: {
+    referrerId: "io.sunship.app",
+    domain: "pasapesos.page.link",
+    path: "auth-email",
+  },
+});
+```
+
 ## Building production files
 
 1. Run `yarn build`.

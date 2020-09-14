@@ -1,9 +1,12 @@
 import { FirebaseAppConfig } from "@firebase/app-types";
+import { DynamicLinkSettings } from "types.d/AppConfig";
 import { Page } from "types.d/Page";
 import { Status } from "types.d/Status";
 
 export interface State {
   phoneNumber: string;
+  email: string;
+  dynamicLinkSettings?: DynamicLinkSettings;
   currentPage: Page;
   appDidLoad: boolean;
   statuses: { [key: string]: Status };
