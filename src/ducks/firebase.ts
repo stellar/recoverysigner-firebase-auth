@@ -5,9 +5,10 @@ type Actions =
   | SendVerificationEmailAction
   | ConfirmVerificationCodeAction;
 
-export const CONFIRM_VERIFICATION_CODE = "firebase/CONFIRM_VERIFICATION_CODE";
 export const SEND_VERIFICATION_CODE = "firebase/SEND_VERIFICATION_CODE";
 export const SEND_VERIFICATION_EMAIL = "firebase/SEND_VERIFICATION_EMAIL";
+export const CONFIRM_VERIFICATION_CODE = "firebase/CONFIRM_VERIFICATION_CODE";
+export const CONFIRM_VERIFICATION_EMAIL = "firebase/CONFIRM_VERIFICATION_EMAIL";
 
 export function reducer(state: State, action: Actions) {
   switch (action.type) {

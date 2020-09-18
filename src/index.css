@@ -91,6 +91,10 @@ button {
   padding: 8px 18px;
 }
 
+.text-bold {
+  font-weight: bold;
+}
+
 .text-center {
   text-align: center;
 }
@@ -107,6 +111,7 @@ button {
   color: #fff;
   font-weight: 600;
   font-size: 14px;
+  margin-top: 30px;
 }
 
 .logo {

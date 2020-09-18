@@ -9,7 +9,7 @@ import { useStatus } from "hooks/useStatus";
 import { CONFIRM_VERIFICATION_CODE } from "ducks/firebase";
 import { setPage } from "ducks/page";
 
-export function ConfirmVerification() {
+export function ConfirmVerificationCode() {
   const dispatch = useDispatch();
   const [verificationCode, setVerificationCode] = useState("");
   const { verificationId, idToken } = useSelector((state: State) => state);
