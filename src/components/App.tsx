@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppConfig } from "types.d/AppConfig";
 import { Page } from "types.d/Page";
 import { State } from "types.d/State";
-import { ConfirmVerification } from "components/ConfirmVerification";
+import { ConfirmVerificationCode } from "components/ConfirmVerificationCode";
+import { ConfirmVerificationEmail } from "components/ConfirmVerificationEmail";
 import { SendVerification } from "components/SendVerification";
 import { initApp } from "ducks/app";
 
@@ -25,8 +26,12 @@ export function App({ config }: AppProps) {
   useEffect(() => {
     if (appDidLoad) {
       switch (currentPage) {
-        case Page.confirmVerification:
-          setComponent(<ConfirmVerification />);
+        case Page.confirmVerificationCode:
+          setComponent(<ConfirmVerificationCode />);
+          break;
+
+        case Page.confirmVerificationEmail:
+          setComponent(<ConfirmVerificationEmail />);
           break;
 
         default:

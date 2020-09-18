@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Trans } from "@lingui/macro";
 
-import { SEND_VERIFICATION_CODE } from "ducks/firebase";
+import {
+  SEND_VERIFICATION_CODE,
+  SEND_VERIFICATION_EMAIL,
+} from "ducks/firebase";
 import { setPage } from "ducks/page";
 import { sendVerificationCode } from "helpers/sendVerificationCode";
 import { sendVerificationEmail } from "helpers/sendVerificationEmail";
@@ -14,44 +17,37 @@ const DELAY = 3000;
 
 export function SendVerification() {
   const dispatch = useDispatch();
-  const status = useStatus(SEND_VERIFICATION_CODE);
+  const sendCodeStatus = useStatus(SEND_VERIFICATION_CODE);
+  const sendEmailStatus = useStatus(SEND_VERIFICATION_EMAIL);
   const [isLoading, setIsLoading] = useState(true);
-  const {
-    appDidLoad,
-    verificationId,
-    phoneNumber,
-    email,
-    dynamicLinkSettings,
-  } = useSelector((state: State) => state);
+  const { appDidLoad, phoneNumber, email, dynamicLinkSettings } = useSelector(
+    (state: State) => state,
+  );
 
-  const handleSendVerificationCode = () => {
+  const handleSendVerification = () => {
     if (appDidLoad) {
       if (phoneNumber) {
-        sendVerificationCode({
-          phoneNumber,
-          dispatch,
-        });
+        sendVerificationCode({ phoneNumber, dispatch });
       }
       if (email && dynamicLinkSettings) {
-        sendVerificationEmail({
-          email,
-          dynamicLinkSettings,
-          dispatch,
-        });
+        sendVerificationEmail({ email, dynamicLinkSettings, dispatch });
       }
     }
   };
 
   useEffect(() => {
-    handleSendVerificationCode();
+    handleSendVerification();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [appDidLoad, phoneNumber, email, dispatch]);
+  }, [appDidLoad, dispatch]);
 
   useEffect(() => {
-    if (verificationId) {
-      dispatch(setPage(Page.confirmVerification));
+    if (sendCodeStatus.isSuccess) {
+      dispatch(setPage(Page.confirmVerificationCode));
     }
-  }, [verificationId, dispatch]);
+    if (sendEmailStatus.isSuccess) {
+      dispatch(setPage(Page.confirmVerificationEmail));
+    }
+  }, [sendCodeStatus.isSuccess, sendEmailStatus.isSuccess, dispatch]);
 
   // We automatically trigger the recaptcha verification. To avoid flashing the
   // "Send verification code" button, we display the button when DELAY has
@@ -74,11 +70,12 @@ export function SendVerification() {
         </div>
       )}
 
-      {status.error && <p>Error: {status.error.message}</p>}
+      {sendCodeStatus.error && <p>Error: {sendCodeStatus.error.message}</p>}
+      {sendEmailStatus.error && <p>Error: {sendEmailStatus.error.message}</p>}
 
-      {!isLoading && !status.error && (
+      {!isLoading && !sendCodeStatus.error && !sendEmailStatus.error && (
         <p className="text-center">
-          <button className="button" onClick={handleSendVerificationCode}>
+          <button className="button" onClick={handleSendVerification}>
             <span>
               {phoneNumber && <Trans>Send verification code</Trans>}
               {email && <Trans>Send verification email</Trans>}

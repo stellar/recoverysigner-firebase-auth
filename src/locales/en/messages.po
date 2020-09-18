@@ -13,10 +13,22 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: src/components/ConfirmVerificationEmail.tsx:15
+#~ msgid "If the below email address is associated with an account, you will receive a verification email blahhhhfjhsdkhfdshfksdfd."
+#~ msgstr "If the below email address is associated with an account, you will receive a verification email blahhhhfjhsdkhfdshfksdfd."
+
+#: src/components/ConfirmVerificationEmail.tsx:15
+msgid "If the below email address is associated with an account, you will receive a verification email."
+msgstr "If the below email address is associated with an account, you will receive a verification email."
+
 #: src/helpers/getFirebaseError.ts:27
 #: src/helpers/getFirebaseError.ts:32
 msgid "Oops! Please try again in a few minutes. (error code: {0})"
 msgstr "Oops! Please try again in a few minutes. (error code: {0})"
+
+#: src/components/ConfirmVerificationEmail.tsx:22
+msgid "Please check your email and click the verification link in the email message to proceed."
+msgstr "Please check your email and click the verification link in the email message to proceed."
 
 #: src/helpers/getFirebaseError.ts:17
 msgid "Please fill out the captcha to proceed."
@@ -26,19 +38,20 @@ msgstr "Please fill out the captcha to proceed."
 msgid "Please provide a valid phone number."
 msgstr "Please provide a valid phone number."
 
-#: src/components/SendVerification.tsx:54
+#: src/components/SendVerification.tsx:51
 msgid "Please wait…"
 msgstr "Please wait…"
 
-#: src/components/ConfirmVerification.tsx:54
+#: src/components/ConfirmVerificationCode.tsx:54
+#: src/components/ConfirmVerificationEmail.tsx:32
 msgid "Resend"
 msgstr "Resend"
 
-#: src/components/SendVerification.tsx:63
+#: src/components/SendVerification.tsx:61
 msgid "Send verification code"
 msgstr "Send verification code"
 
-#: src/components/SendVerification.tsx:64
+#: src/components/SendVerification.tsx:62
 msgid "Send verification email"
 msgstr "Send verification email"
 
@@ -54,11 +67,11 @@ msgstr "There was a network connectivity issue. Please try again."
 msgid "This email is already in use. Please use another one."
 msgstr "This email is already in use. Please use another one."
 
-#: src/components/ConfirmVerification.tsx:41
+#: src/components/ConfirmVerificationCode.tsx:41
 msgid "We’ve sent you a verification code:"
 msgstr "We’ve sent you a verification code:"
 
-#: src/components/ConfirmVerification.tsx:34
+#: src/components/ConfirmVerificationCode.tsx:34
 msgid "You’ve been verified! Please wait."
 msgstr "You’ve been verified! Please wait."
 

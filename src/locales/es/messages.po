@@ -18,10 +18,22 @@ msgstr ""
 "X-Crowdin-File: messages.po\n"
 "X-Crowdin-File-ID: 64\n"
 
+#: src/components/ConfirmVerificationEmail.tsx:15
+#~ msgid "If the below email address is associated with an account, you will receive a verification email blahhhhfjhsdkhfdshfksdfd."
+#~ msgstr ""
+
+#: src/components/ConfirmVerificationEmail.tsx:15
+msgid "If the below email address is associated with an account, you will receive a verification email."
+msgstr ""
+
 #: src/helpers/getFirebaseError.ts:27
 #: src/helpers/getFirebaseError.ts:32
 msgid "Oops! Please try again in a few minutes. (error code: {0})"
 msgstr "¡Ups! Por favor intenta nuevamente en unos minutos. (código de error: {0})"
+
+#: src/components/ConfirmVerificationEmail.tsx:22
+msgid "Please check your email and click the verification link in the email message to proceed."
+msgstr ""
 
 #: src/helpers/getFirebaseError.ts:17
 msgid "Please fill out the captcha to proceed."
@@ -31,19 +43,20 @@ msgstr "Por favor completa el captcha para proceder."
 msgid "Please provide a valid phone number."
 msgstr "Por favor provee un número de teléfono válido."
 
-#: src/components/SendVerification.tsx:54
+#: src/components/SendVerification.tsx:51
 msgid "Please wait…"
 msgstr "Por favor espera…"
 
-#: src/components/ConfirmVerification.tsx:54
+#: src/components/ConfirmVerificationCode.tsx:54
+#: src/components/ConfirmVerificationEmail.tsx:32
 msgid "Resend"
 msgstr "Reenviar"
 
-#: src/components/SendVerification.tsx:63
+#: src/components/SendVerification.tsx:61
 msgid "Send verification code"
 msgstr "Enviar código de verificación"
 
-#: src/components/SendVerification.tsx:64
+#: src/components/SendVerification.tsx:62
 msgid "Send verification email"
 msgstr ""
 
@@ -59,11 +72,11 @@ msgstr "Hubo un problema de conectividad de red. Inténtalo de nuevo."
 msgid "This email is already in use. Please use another one."
 msgstr "Este correo electrónico ya está en uso. Por favor usa otro."
 
-#: src/components/ConfirmVerification.tsx:41
+#: src/components/ConfirmVerificationCode.tsx:41
 msgid "We’ve sent you a verification code:"
 msgstr "Te hemos enviado un código de verificación:"
 
-#: src/components/ConfirmVerification.tsx:34
+#: src/components/ConfirmVerificationCode.tsx:34
 msgid "You’ve been verified! Please wait."
 msgstr "¡Has sido verificado! Por favor espera."
 
