@@ -24,7 +24,12 @@ export async function sendVerificationCode({
     // issues.
     const recaptchaContainer = document.createElement("div");
     recaptchaContainer.id = "recaptcha";
-    document.querySelector("#recaptcha")!.replaceWith(recaptchaContainer);
+
+    const existingRecaptchaContainer = document.querySelector("#recaptcha")!;
+    const parent = existingRecaptchaContainer.parentElement!;
+
+    parent.insertBefore(recaptchaContainer, existingRecaptchaContainer);
+    parent.removeChild(existingRecaptchaContainer);
 
     const recaptchaVerifier = new firebase.auth.RecaptchaVerifier("recaptcha", {
       size: "invisible",
