@@ -20,6 +20,7 @@
 - Install the [Firebase CLI](https://firebase.google.com/docs/cli)
 - Run `firebase login` and follow the instructions
 - Run `firebase init`, and enable `Hosting`
+- Run `firebase use <project id>`
 
 ## Hosting locally
 
@@ -37,7 +38,7 @@ this project. To do this:
 - Run `yarn build`
   - This exports the project with any code changes you've made, preparing it for
     deploy.
-- Run `firebase deploy`
+- Run `firebase deploy --public build`
   - The output of this will contain a 'Hosting URL', where you can view the
     project. To avoid browser caching issues, it's best to use a private
     browsing window.
