@@ -22,7 +22,7 @@ msgstr "Error: {0}"
 #~ msgid "If the below email address is associated with an account, you will receive a verification email blahhhhfjhsdkhfdshfksdfd."
 #~ msgstr "If the below email address is associated with an account, you will receive a verification email blahhhhfjhsdkhfdshfksdfd."
 
-#: src/components/ConfirmVerificationEmail.tsx:15
+#: src/components/SentVerificationEmail.tsx:15
 msgid "If the below email address is associated with an account, you will receive a verification email."
 msgstr "If the below email address is associated with an account, you will receive a verification email."
 
@@ -31,7 +31,7 @@ msgstr "If the below email address is associated with an account, you will recei
 msgid "Oops! Please try again in a few minutes. (error code: {0})"
 msgstr "Oops! Please try again in a few minutes. (error code: {0})"
 
-#: src/components/ConfirmVerificationEmail.tsx:22
+#: src/components/SentVerificationEmail.tsx:22
 msgid "Please check your email and click the verification link in the email message to proceed."
 msgstr "Please check your email and click the verification link in the email message to proceed."
 
@@ -49,7 +49,7 @@ msgid "Please wait…"
 msgstr "Please wait…"
 
 #: src/components/ConfirmVerificationCode.tsx:54
-#: src/components/ConfirmVerificationEmail.tsx:32
+#: src/components/SentVerificationEmail.tsx:32
 msgid "Resend"
 msgstr "Resend"
 

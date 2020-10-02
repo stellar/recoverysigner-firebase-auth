@@ -22,7 +22,7 @@ export function SendVerificationEmail() {
 
   useEffect(() => {
     if (sendEmailStatus.isSuccess) {
-      dispatch(setPage(Page.confirmVerificationEmail));
+      dispatch(setPage(Page.sentVerificationEmail));
     }
   }, [sendEmailStatus.isSuccess, dispatch]);
 

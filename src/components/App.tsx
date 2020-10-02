@@ -5,7 +5,7 @@ import { AppConfig } from "types.d/AppConfig";
 import { Page } from "types.d/Page";
 import { State } from "types.d/State";
 import { ConfirmVerificationCode } from "components/ConfirmVerificationCode";
-import { ConfirmVerificationEmail } from "components/ConfirmVerificationEmail";
+import { SentVerificationEmail } from "components/SentVerificationEmail";
 import { Landing } from "components/Landing";
 import { SendVerificationCode } from "components/SendVerificationCode";
 import { SendVerificationEmail } from "components/SendVerificationEmail";
@@ -32,16 +32,16 @@ export function App({ config }: AppProps) {
           setComponent(<SendVerificationCode />);
           break;
 
-        case Page.sendVerificationEmail:
-          setComponent(<SendVerificationEmail />);
-          break;
-
         case Page.confirmVerificationCode:
           setComponent(<ConfirmVerificationCode />);
           break;
 
-        case Page.confirmVerificationEmail:
-          setComponent(<ConfirmVerificationEmail />);
+        case Page.sendVerificationEmail:
+          setComponent(<SendVerificationEmail />);
+          break;
+
+        case Page.sentVerificationEmail:
+          setComponent(<SentVerificationEmail />);
           break;
 
         default:

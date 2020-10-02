@@ -6,7 +6,7 @@ import { State } from "types.d/State";
 import { Page } from "types.d/Page";
 import { setPage } from "ducks/page";
 
-export function ConfirmVerificationEmail() {
+export function SentVerificationEmail() {
   const dispatch = useDispatch();
   const { email } = useSelector((state: State) => state);
 
