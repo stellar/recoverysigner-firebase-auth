@@ -11,7 +11,7 @@ export function ConfirmVerificationEmail() {
   const { email } = useSelector((state: State) => state);
 
   const handleResend = () => {
-    dispatch(setPage(Page.sendVerification));
+    dispatch(setPage(Page.sendVerificationEmail));
   };
 
   return (

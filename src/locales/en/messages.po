@@ -13,6 +13,11 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: src/components/SendVerificationCode.tsx:46
+#: src/components/SendVerificationEmail.tsx:31
+msgid "Error: {0}"
+msgstr "Error: {0}"
+
 #: src/components/ConfirmVerificationEmail.tsx:15
 #~ msgid "If the below email address is associated with an account, you will receive a verification email blahhhhfjhsdkhfdshfksdfd."
 #~ msgstr "If the below email address is associated with an account, you will receive a verification email blahhhhfjhsdkhfdshfksdfd."
@@ -38,7 +43,8 @@ msgstr "Please fill out the captcha to proceed."
 msgid "Please provide a valid phone number."
 msgstr "Please provide a valid phone number."
 
-#: src/components/SendVerification.tsx:51
+#: src/components/SendVerificationCode.tsx:41
+#: src/components/SendVerificationEmail.tsx:26
 msgid "Please wait…"
 msgstr "Please wait…"
 
@@ -47,13 +53,13 @@ msgstr "Please wait…"
 msgid "Resend"
 msgstr "Resend"
 
-#: src/components/SendVerification.tsx:61
+#: src/components/SendVerificationCode.tsx:52
 msgid "Send verification code"
 msgstr "Send verification code"
 
-#: src/components/SendVerification.tsx:62
-msgid "Send verification email"
-msgstr "Send verification email"
+#: src/components/SendVerificationEmail.tsx:51
+#~ msgid "Send verification email"
+#~ msgstr "Send verification email"
 
 #: src/helpers/getFirebaseError.ts:9
 msgid "The confirmation code you provided is invalid."

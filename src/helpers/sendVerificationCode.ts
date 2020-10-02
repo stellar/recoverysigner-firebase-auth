@@ -5,6 +5,7 @@ import {
   sendVerificationCode as action,
 } from "ducks/firebase";
 import { buildStatus } from "helpers/buildStatus";
+import { getFirebaseError } from "helpers/getFirebaseError";
 import { StatusType } from "types.d/Status";
 
 interface SendVerificationCodeParams {
@@ -45,37 +46,7 @@ export async function sendVerificationCode({
     dispatch(action({ provider, verificationId }));
     setStatus(StatusType.success);
   } catch (error) {
-    let message = error.message;
-
-    if (error.code) {
-      switch (error.code) {
-        case "auth/missing-verification-code":
-        case "auth/invalid-verification-code":
-          message = "The confirmation code you provided is invalid.";
-          break;
-
-        case "auth/missing-phone-number":
-        case "auth/invalid-phone-number":
-          message = "Please provide a valid phone number.";
-          break;
-
-        case "auth/too-many-requests":
-          message =
-            "You’ve tried to do that too many times. Please wait a while and try again!";
-          break;
-
-        case "auth/popup-closed-by-user":
-          message = "Please fill out the captcha to proceed.";
-          break;
-
-        default:
-          try {
-            message = JSON.parse(message).error.message;
-          } catch (anotherError) {
-            message = error.toString();
-          }
-      }
-    }
+    const message = getFirebaseError(error);
 
     setStatus(StatusType.error, new Error(message));
   }

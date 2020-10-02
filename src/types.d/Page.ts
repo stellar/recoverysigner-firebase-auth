@@ -1,5 +1,7 @@
 export enum Page {
   confirmVerificationCode = "confirmVerificationCode",
   confirmVerificationEmail = "confirmVerificationEmail",
-  sendVerification = "sendVerification",
+  landing = "landing",
+  sendVerificationCode = "sendVerificationCode",
+  sendVerificationEmail = "sendVerificationEmail",
 }

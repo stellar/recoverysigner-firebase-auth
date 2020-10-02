@@ -35,7 +35,7 @@ export function ConfirmVerificationCode() {
   }, [confirmCodeStatus.hasLoaded, confirmCodeStatus.isSuccess, idToken]);
 
   const handleResend = () => {
-    dispatch(setPage(Page.sendVerification));
+    dispatch(setPage(Page.sendVerificationCode));
   };
 
   if (confirmCodeStatus.isSuccess) {

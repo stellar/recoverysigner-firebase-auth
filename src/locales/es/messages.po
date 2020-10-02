@@ -18,6 +18,11 @@ msgstr ""
 "X-Crowdin-File: messages.po\n"
 "X-Crowdin-File-ID: 64\n"
 
+#: src/components/SendVerificationCode.tsx:46
+#: src/components/SendVerificationEmail.tsx:31
+msgid "Error: {0}"
+msgstr ""
+
 #: src/components/ConfirmVerificationEmail.tsx:15
 #~ msgid "If the below email address is associated with an account, you will receive a verification email blahhhhfjhsdkhfdshfksdfd."
 #~ msgstr ""
@@ -43,7 +48,8 @@ msgstr "Por favor completa el captcha para proceder."
 msgid "Please provide a valid phone number."
 msgstr "Por favor provee un número de teléfono válido."
 
-#: src/components/SendVerification.tsx:51
+#: src/components/SendVerificationCode.tsx:41
+#: src/components/SendVerificationEmail.tsx:26
 msgid "Please wait…"
 msgstr "Por favor espera…"
 
@@ -52,13 +58,13 @@ msgstr "Por favor espera…"
 msgid "Resend"
 msgstr "Reenviar"
 
-#: src/components/SendVerification.tsx:61
+#: src/components/SendVerificationCode.tsx:52
 msgid "Send verification code"
 msgstr "Enviar código de verificación"
 
-#: src/components/SendVerification.tsx:62
-msgid "Send verification email"
-msgstr ""
+#: src/components/SendVerificationEmail.tsx:51
+#~ msgid "Send verification email"
+#~ msgstr ""
 
 #: src/helpers/getFirebaseError.ts:9
 msgid "The confirmation code you provided is invalid."

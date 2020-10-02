@@ -5,6 +5,7 @@ import {
   sendVerificationEmail as action,
 } from "ducks/firebase";
 import { buildStatus } from "helpers/buildStatus";
+import { getFirebaseError } from "helpers/getFirebaseError";
 import { DynamicLinkSettings } from "types.d/AppConfig";
 import { StatusType } from "types.d/Status";
 
@@ -39,6 +40,8 @@ export async function sendVerificationEmail({
       setStatus(StatusType.success);
     })
     .catch((error) => {
-      setStatus(StatusType.error, new Error(error));
+      const message = getFirebaseError(error);
+
+      setStatus(StatusType.error, new Error(message));
     });
 }
