@@ -6,7 +6,9 @@ import { Page } from "types.d/Page";
 import { State } from "types.d/State";
 import { ConfirmVerificationCode } from "components/ConfirmVerificationCode";
 import { ConfirmVerificationEmail } from "components/ConfirmVerificationEmail";
-import { SendVerification } from "components/SendVerification";
+import { Landing } from "components/Landing";
+import { SendVerificationCode } from "components/SendVerificationCode";
+import { SendVerificationEmail } from "components/SendVerificationEmail";
 import { initApp } from "ducks/app";
 
 interface AppProps {
@@ -26,6 +28,14 @@ export function App({ config }: AppProps) {
   useEffect(() => {
     if (appDidLoad) {
       switch (currentPage) {
+        case Page.sendVerificationCode:
+          setComponent(<SendVerificationCode />);
+          break;
+
+        case Page.sendVerificationEmail:
+          setComponent(<SendVerificationEmail />);
+          break;
+
         case Page.confirmVerificationCode:
           setComponent(<ConfirmVerificationCode />);
           break;
@@ -35,7 +45,7 @@ export function App({ config }: AppProps) {
           break;
 
         default:
-          setComponent(<SendVerification />);
+          setComponent(<Landing />);
       }
     }
   }, [appDidLoad, currentPage]);
