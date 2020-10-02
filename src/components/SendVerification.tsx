@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Trans } from "@lingui/macro";
 
@@ -13,13 +13,10 @@ import { useStatus } from "hooks/useStatus";
 import { Page } from "types.d/Page";
 import { State } from "types.d/State";
 
-const DELAY = 3000;
-
 export function SendVerification() {
   const dispatch = useDispatch();
   const sendCodeStatus = useStatus(SEND_VERIFICATION_CODE);
   const sendEmailStatus = useStatus(SEND_VERIFICATION_EMAIL);
-  const [isLoading, setIsLoading] = useState(true);
   const { appDidLoad, phoneNumber, email, dynamicLinkSettings } = useSelector(
     (state: State) => state,
   );
@@ -49,40 +46,16 @@ export function SendVerification() {
     }
   }, [sendCodeStatus.isSuccess, sendEmailStatus.isSuccess, dispatch]);
 
-  // We automatically trigger the recaptcha verification. To avoid flashing the
-  // "Send verification code" button, we display the button when DELAY has
-  // passed.
-  useEffect(() => {
-    const tid = setTimeout(() => {
-      setIsLoading(false);
-    }, DELAY);
-
-    return () => clearTimeout(tid);
-  }, []);
-
   return (
     <div className="panel">
-      {isLoading && (
-        <div className="text-center text-large">
-          <p>
-            <Trans>Please wait…</Trans>
-          </p>
-        </div>
-      )}
+      <div className="text-center text-large">
+        <p>
+          <Trans>Please wait…</Trans>
+        </p>
+      </div>
 
       {sendCodeStatus.error && <p>Error: {sendCodeStatus.error.message}</p>}
       {sendEmailStatus.error && <p>Error: {sendEmailStatus.error.message}</p>}
-
-      {!isLoading && !sendCodeStatus.error && !sendEmailStatus.error && (
-        <p className="text-center">
-          <button className="button" onClick={handleSendVerification}>
-            <span>
-              {phoneNumber && <Trans>Send verification code</Trans>}
-              {email && <Trans>Send verification email</Trans>}
-            </span>
-          </button>
-        </p>
-      )}
     </div>
   );
 }
