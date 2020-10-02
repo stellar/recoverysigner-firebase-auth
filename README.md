@@ -61,16 +61,27 @@ Run the following script in your browser console:
 ```js
 main({
   email: "jordyn@example.com",
-  // Client needs to pass in dynamicLinkSettings, they change depending on the env and are used by Firebase to generate a sign-in link
+  // Client needs to pass in dynamicLinkSettings, they change depending on
+  // the env and are used by Firebase to generate a sign-in link
   dynamicLinkSettings: {
     domain: "pasapesos.page.link", // dynamic link domain
     path: "auth-email", // dynamic link path
-    referrerId: "io.sunship.app", // app the dynamic link will send you to
+    referrerId: "io.example.app", // app the dynamic link will send you to
   },
 });
 ```
 
-A link will be sent to that email.
+A link will be sent to that email. To complete sign-in, refresh the browser and
+run:
+
+```js
+main({
+  email: "jordyn@example.com",
+  // link from email
+  signInLink:
+    "https://example.firebaseapp.com/__/auth/action?apiKey=[apiKey]&mode=signIn&oobCode=[oobCode]&continueUrl=https://sunship.page.link/email-auth&lang=en",
+});
+```
 
 ## Building production files
 

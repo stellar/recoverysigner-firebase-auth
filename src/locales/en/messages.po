@@ -13,6 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: src/components/ConfirmVerificationEmail.tsx:40
 #: src/components/SendVerificationCode.tsx:46
 #: src/components/SendVerificationEmail.tsx:31
 msgid "Error: {0}"
@@ -43,6 +44,7 @@ msgstr "Please fill out the captcha to proceed."
 msgid "Please provide a valid phone number."
 msgstr "Please provide a valid phone number."
 
+#: src/components/ConfirmVerificationEmail.tsx:35
 #: src/components/SendVerificationCode.tsx:41
 #: src/components/SendVerificationEmail.tsx:26
 msgid "Please wait…"
@@ -78,6 +80,7 @@ msgid "We’ve sent you a verification code:"
 msgstr "We’ve sent you a verification code:"
 
 #: src/components/ConfirmVerificationCode.tsx:34
+#: src/components/ConfirmVerificationEmail.tsx:28
 msgid "You’ve been verified! Please wait."
 msgstr "You’ve been verified! Please wait."
 

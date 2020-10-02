@@ -7,9 +7,13 @@ import { State } from "types.d/State";
 
 export function Landing() {
   const dispatch = useDispatch();
-  const { appDidLoad, phoneNumber, email, dynamicLinkSettings } = useSelector(
-    (state: State) => state,
-  );
+  const {
+    appDidLoad,
+    phoneNumber,
+    email,
+    dynamicLinkSettings,
+    signInLink,
+  } = useSelector((state: State) => state);
 
   useEffect(() => {
     if (appDidLoad) {
@@ -22,9 +26,18 @@ export function Landing() {
         dispatch(setPage(Page.sendVerificationEmail));
       }
       // confirm auth with email
-      // TODO - if (email && signInLink) { dispatch(setPage(Page.confirmVerificationEmail)); }
+      if (email && signInLink) {
+        dispatch(setPage(Page.confirmVerificationEmail));
+      }
     }
-  }, [appDidLoad, phoneNumber, email, dynamicLinkSettings, dispatch]);
+  }, [
+    appDidLoad,
+    phoneNumber,
+    email,
+    dynamicLinkSettings,
+    signInLink,
+    dispatch,
+  ]);
 
   return <div className="panel"></div>;
 }

@@ -12,6 +12,9 @@ export interface AppConfig {
   email?: string;
   dynamicLinkSettings?: DynamicLinkSettings;
 
+  // required for 'confirm auth with email'
+  signInLink?: string;
+
   recaptchaVerifier: firebase.auth.RecaptchaVerifier;
   language: string;
 }
