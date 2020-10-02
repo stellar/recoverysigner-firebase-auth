@@ -18,6 +18,11 @@ msgstr ""
 "X-Crowdin-File: messages.po\n"
 "X-Crowdin-File-ID: 64\n"
 
+#: src/components/SendVerificationCode.tsx:46
+#: src/components/SendVerificationEmail.tsx:31
+msgid "Error: {0}"
+msgstr ""
+
 #: src/components/ConfirmVerificationEmail.tsx:15
 #~ msgid "If the below email address is associated with an account, you will receive a verification email blahhhhfjhsdkhfdshfksdfd."
 #~ msgstr ""
@@ -53,7 +58,7 @@ msgstr "Por favor espera…"
 msgid "Resend"
 msgstr "Reenviar"
 
-#: src/components/SendVerificationCode.tsx:50
+#: src/components/SendVerificationCode.tsx:52
 msgid "Send verification code"
 msgstr "Enviar código de verificación"
 

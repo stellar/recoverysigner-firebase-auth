@@ -34,7 +34,11 @@ export function SendVerificationEmail() {
         </p>
       </div>
 
-      {sendEmailStatus.error && <p>Error: {sendEmailStatus.error.message}</p>}
+      {sendEmailStatus.error && (
+        <p>
+          <Trans>Error: {sendEmailStatus.error.message}</Trans>
+        </p>
+      )}
     </div>
   );
 }

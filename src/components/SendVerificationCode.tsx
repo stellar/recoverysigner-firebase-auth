@@ -55,7 +55,11 @@ export function SendVerificationCode() {
         </div>
       )}
 
-      {sendCodeStatus.error && <p>Error: {sendCodeStatus.error.message}</p>}
+      {sendCodeStatus.error && (
+        <p>
+          <Trans>Error: {sendCodeStatus.error.message}</Trans>
+        </p>
+      )}
 
       {!isLoading && !sendCodeStatus.error && (
         <p className="text-center">
