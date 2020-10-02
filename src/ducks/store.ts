@@ -10,8 +10,6 @@ import { reducer as statusReducer } from "./status";
 
 const initialState: State = {
   appDidLoad: false,
-  phoneNumber: "",
-  email: "",
   currentPage: Page.sendVerification,
   statuses: {},
 } as State;

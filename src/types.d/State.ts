@@ -4,9 +4,11 @@ import { Page } from "types.d/Page";
 import { Status } from "types.d/Status";
 
 export interface State {
-  phoneNumber: string;
-  email: string;
+  phoneNumber?: string;
+
+  email?: string;
   dynamicLinkSettings?: DynamicLinkSettings;
+
   currentPage: Page;
   appDidLoad: boolean;
   statuses: { [key: string]: Status };

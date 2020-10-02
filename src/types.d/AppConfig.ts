@@ -5,9 +5,13 @@ export interface DynamicLinkSettings {
 }
 
 export interface AppConfig {
-  phoneNumber: string;
-  email: string;
+  // required for 'auth with phone'
+  phoneNumber?: string;
+
+  // required for 'auth with email'
+  email?: string;
   dynamicLinkSettings?: DynamicLinkSettings;
+
   recaptchaVerifier: firebase.auth.RecaptchaVerifier;
   language: string;
 }
