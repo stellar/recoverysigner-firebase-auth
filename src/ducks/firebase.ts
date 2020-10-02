@@ -3,7 +3,8 @@ import { State } from "types.d/State";
 type Actions =
   | SendVerificationCodeAction
   | SendVerificationEmailAction
-  | ConfirmVerificationCodeAction;
+  | ConfirmVerificationCodeAction
+  | ConfirmVerificationEmailAction;
 
 export const SEND_VERIFICATION_CODE = "firebase/SEND_VERIFICATION_CODE";
 export const SEND_VERIFICATION_EMAIL = "firebase/SEND_VERIFICATION_EMAIL";
@@ -21,10 +22,15 @@ export function reducer(state: State, action: Actions) {
     case CONFIRM_VERIFICATION_CODE:
       return { ...state, ...action.payload };
 
+    case CONFIRM_VERIFICATION_EMAIL:
+      return { ...state, ...action.payload };
+
     default:
       return state;
   }
 }
+
+// Send verification code
 
 interface SendVerificationCodeAction {
   type: typeof SEND_VERIFICATION_CODE;
@@ -42,6 +48,8 @@ export function sendVerificationCode(
   return { type: SEND_VERIFICATION_CODE, payload };
 }
 
+// Send verification email
+
 interface SendVerificationEmailAction {
   type: typeof SEND_VERIFICATION_EMAIL;
 }
@@ -49,6 +57,8 @@ interface SendVerificationEmailAction {
 export function sendVerificationEmail(): SendVerificationEmailAction {
   return { type: SEND_VERIFICATION_EMAIL };
 }
+
+// Confirm verification code
 
 interface ConfirmVerificationCodeAction {
   type: typeof CONFIRM_VERIFICATION_CODE;
@@ -63,4 +73,21 @@ export function confirmVerificationCode(
   payload: ConfirmVerificationCodePayload,
 ): ConfirmVerificationCodeAction {
   return { type: CONFIRM_VERIFICATION_CODE, payload };
+}
+
+// Confirm verification email
+
+interface ConfirmVerificationEmailAction {
+  type: typeof CONFIRM_VERIFICATION_EMAIL;
+  payload: ConfirmVerificationEmailPayload;
+}
+
+interface ConfirmVerificationEmailPayload {
+  idToken: string;
+}
+
+export function confirmVerificationEmail(
+  payload: ConfirmVerificationEmailPayload,
+): ConfirmVerificationEmailAction {
+  return { type: CONFIRM_VERIFICATION_EMAIL, payload };
 }

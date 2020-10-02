@@ -9,6 +9,8 @@ export interface State {
   email?: string;
   dynamicLinkSettings?: DynamicLinkSettings;
 
+  signInLink?: string;
+
   currentPage: Page;
   appDidLoad: boolean;
   statuses: { [key: string]: Status };
