@@ -13,7 +13,7 @@ export function ConfirmVerificationCode() {
   const dispatch = useDispatch();
   const [verificationCode, setVerificationCode] = useState("");
   const { verificationId, idToken } = useSelector((state: State) => state);
-  const status = useStatus(CONFIRM_VERIFICATION_CODE);
+  const confirmCodeStatus = useStatus(CONFIRM_VERIFICATION_CODE);
 
   useEffect(() => {
     if (verificationCode.match(/^\d{6}$/)) {
@@ -26,19 +26,19 @@ export function ConfirmVerificationCode() {
   }, [verificationId, verificationCode, dispatch]);
 
   useEffect(() => {
-    if (status.isSuccess) {
+    if (confirmCodeStatus.isSuccess) {
       window.postMessage(
         JSON.stringify({ type: "idToken", idToken }),
         window.location.origin,
       );
     }
-  }, [status.hasLoaded, status.isSuccess, idToken]);
+  }, [confirmCodeStatus.hasLoaded, confirmCodeStatus.isSuccess, idToken]);
 
   const handleResend = () => {
     dispatch(setPage(Page.sendVerification));
   };
 
-  if (status.isSuccess) {
+  if (confirmCodeStatus.isSuccess) {
     return (
       <div className="panel">
         <p className="text-center text-large">
@@ -50,29 +50,29 @@ export function ConfirmVerificationCode() {
 
   return (
     <div className="panel">
-      {!status.isSuccess && (
-        <div>
-          <p className="text-center">
-            <Trans>We’ve sent you a verification code:</Trans>
-          </p>
+      <div>
+        <p className="text-center">
+          <Trans>We’ve sent you a verification code:</Trans>
+        </p>
 
-          <label>
-            <input
-              maxLength={6}
-              autoComplete="one-time-code"
-              inputMode="numeric"
-              type="text"
-              pattern="^\d{6}$"
-              onChange={({ target: { value } }) => setVerificationCode(value)}
-              disabled={status.isLoading}
-            />
-          </label>
-        </div>
+        <label>
+          <input
+            maxLength={6}
+            autoComplete="one-time-code"
+            inputMode="numeric"
+            type="text"
+            pattern="^\d{6}$"
+            onChange={({ target: { value } }) => setVerificationCode(value)}
+            disabled={confirmCodeStatus.isLoading}
+          />
+        </label>
+      </div>
+
+      {confirmCodeStatus.error && (
+        <div className="error">{confirmCodeStatus.error.toString()}</div>
       )}
 
-      {status.error && <div className="error">{status.error.toString()}</div>}
-
-      {!status.isLoading && (
+      {!confirmCodeStatus.isLoading && (
         <p className="text-center">
           <button className="button-link" type="button" onClick={handleResend}>
             <span>
