@@ -61,12 +61,13 @@ Run the following script in your browser console:
 ```js
 main({
   email: "jordyn@example.com",
-  // Client needs to pass in dynamicLinkSettings, they change depending on
-  // the env and are used by Firebase to generate a sign-in link
+  // These settings are used by Firebase to generate a dynamic sign-in link
   dynamicLinkSettings: {
-    domain: "pasapesos.page.link", // dynamic link domain
-    path: "auth-email", // dynamic link path
-    referrerId: "io.example.app", // app the dynamic link will send you to
+    dynamicLinkDomain: "example.page.link",
+    url: "https://example.page.link/auth-email",
+    android: { installApp: true, packageName: "io.example.app" },
+    iOS: { bundleId: "io.example.app" },
+    handleCodeInApp: true,
   },
 });
 ```
