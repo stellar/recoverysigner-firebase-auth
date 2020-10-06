@@ -23,18 +23,9 @@ export async function sendVerificationEmail({
   const setStatus = buildStatus(SEND_VERIFICATION_EMAIL, dispatch);
   setStatus(StatusType.loading);
 
-  const { referrerId, domain, path } = dynamicLinkSettings;
-  const dynamicLinkConfig = {
-    android: { installApp: true, packageName: referrerId },
-    domain: `${domain}`,
-    handleCodeInApp: true,
-    iOS: { bundleId: referrerId },
-    url: `https://${domain}/${path}`,
-  };
-
   firebase
     .auth()
-    .sendSignInLinkToEmail(email, dynamicLinkConfig)
+    .sendSignInLinkToEmail(email, dynamicLinkSettings)
     .then(() => {
       dispatch(action());
       setStatus(StatusType.success);

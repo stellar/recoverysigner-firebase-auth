@@ -1,7 +1,9 @@
 export interface DynamicLinkSettings {
-  referrerId: string;
-  domain: string;
-  path: string;
+  dynamicLinkDomain: string;
+  url: string;
+  android: { installApp: boolean; packageName: string };
+  iOS: { bundleId: string };
+  handleCodeInApp: true;
 }
 
 export interface AppConfig {
