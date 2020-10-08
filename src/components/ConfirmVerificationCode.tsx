@@ -32,7 +32,7 @@ export function ConfirmVerificationCode() {
         window.location.origin,
       );
     }
-  }, [confirmCodeStatus.hasLoaded, confirmCodeStatus.isSuccess, idToken]);
+  }, [confirmCodeStatus.isSuccess, idToken]);
 
   const handleResend = () => {
     dispatch(setPage(Page.sendVerificationCode));
