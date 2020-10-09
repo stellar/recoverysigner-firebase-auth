@@ -1,7 +1,7 @@
 import { Dispatch } from "redux";
 
 import {
-  confirmVerificationCode as action,
+  confirmVerificationEmail as action,
   CONFIRM_VERIFICATION_EMAIL,
 } from "ducks/firebase";
 import { buildStatus } from "helpers/buildStatus";

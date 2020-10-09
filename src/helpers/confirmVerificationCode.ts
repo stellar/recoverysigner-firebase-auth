@@ -5,6 +5,7 @@ import {
   CONFIRM_VERIFICATION_CODE,
 } from "ducks/firebase";
 import { buildStatus } from "helpers/buildStatus";
+import { getFirebaseError } from "helpers/getFirebaseError";
 import { StatusType } from "types.d/Status";
 
 interface ConfirmVerificationCodeParams {
@@ -33,6 +34,8 @@ export async function confirmVerificationCode({
     dispatch(action({ idToken }));
     setStatus(StatusType.success);
   } catch (error) {
-    setStatus(StatusType.error, error);
+    const message = getFirebaseError(error);
+
+    setStatus(StatusType.error, new Error(message));
   }
 }
