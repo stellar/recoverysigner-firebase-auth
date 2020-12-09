@@ -19,10 +19,6 @@ msgstr ""
 msgid "Error: {0}"
 msgstr "Error: {0}"
 
-#: src/components/ConfirmVerificationEmail.tsx:15
-#~ msgid "If the below email address is associated with an account, you will receive a verification email blahhhhfjhsdkhfdshfksdfd."
-#~ msgstr "If the below email address is associated with an account, you will receive a verification email blahhhhfjhsdkhfdshfksdfd."
-
 #: src/components/SentVerificationEmail.tsx:15
 msgid "If the below email address is associated with an account, you will receive a verification email."
 msgstr "If the below email address is associated with an account, you will receive a verification email."
@@ -58,10 +54,6 @@ msgstr "Resend"
 #: src/components/SendVerificationCode.tsx:52
 msgid "Send verification code"
 msgstr "Send verification code"
-
-#: src/components/SendVerificationEmail.tsx:51
-#~ msgid "Send verification email"
-#~ msgstr "Send verification email"
 
 #: src/helpers/getFirebaseError.ts:9
 msgid "The confirmation code you provided is invalid."

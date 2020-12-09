@@ -8,46 +8,42 @@ msgstr ""
 "Language: es\n"
 "Project-Id-Version: vibrant-app\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2020-07-22 23:58\n"
+"PO-Revision-Date: 2020-12-09 22:55\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: vibrant-app\n"
 "X-Crowdin-Project-ID: 409066\n"
 "X-Crowdin-Language: es-ES\n"
-"X-Crowdin-File: messages.po\n"
+"X-Crowdin-File: /recoverysigner-firebase-auth/messages.po\n"
 "X-Crowdin-File-ID: 64\n"
 
 #: src/components/ConfirmVerificationEmail.tsx:40
 #: src/components/SendVerificationCode.tsx:46
 #: src/components/SendVerificationEmail.tsx:31
 msgid "Error: {0}"
-msgstr ""
-
-#: src/components/ConfirmVerificationEmail.tsx:15
-#~ msgid "If the below email address is associated with an account, you will receive a verification email blahhhhfjhsdkhfdshfksdfd."
-#~ msgstr ""
+msgstr "Error: {0}"
 
 #: src/components/SentVerificationEmail.tsx:15
 msgid "If the below email address is associated with an account, you will receive a verification email."
-msgstr ""
+msgstr "Si la dirección de email, aquí debajo, está asociada con una cuenta, vas a recibir un email de verificación."
 
 #: src/helpers/getFirebaseError.ts:27
 #: src/helpers/getFirebaseError.ts:32
 msgid "Oops! Please try again in a few minutes. (error code: {0})"
-msgstr "¡Ups! Por favor intenta nuevamente en unos minutos. (código de error: {0})"
+msgstr "¡Ups! Por favor intentá nuevamente en unos minutos. (código de error: {0})"
 
 #: src/components/SentVerificationEmail.tsx:22
 msgid "Please check your email and click the verification link in the email message to proceed."
-msgstr ""
+msgstr "Por favor revisá tu correo y hacé clic en el link de verificación para proceder."
 
 #: src/helpers/getFirebaseError.ts:17
 msgid "Please fill out the captcha to proceed."
-msgstr "Por favor completa el captcha para proceder."
+msgstr "Por favor completá la verificación para proceder."
 
 #: src/helpers/getFirebaseError.ts:12
 msgid "Please provide a valid phone number."
-msgstr "Por favor provee un número de teléfono válido."
+msgstr "Por favor proporcioná un número de teléfono válido."
 
 #: src/components/ConfirmVerificationEmail.tsx:35
 #: src/components/SendVerificationCode.tsx:41
@@ -64,21 +60,17 @@ msgstr "Reenviar"
 msgid "Send verification code"
 msgstr "Enviar código de verificación"
 
-#: src/components/SendVerificationEmail.tsx:51
-#~ msgid "Send verification email"
-#~ msgstr ""
-
 #: src/helpers/getFirebaseError.ts:9
 msgid "The confirmation code you provided is invalid."
-msgstr "El código de confirmación que proporcionó no es válido."
+msgstr "El código de confirmación que proporcionaste no es válido."
 
 #: src/helpers/getFirebaseError.ts:21
 msgid "There was a network connectivity issue. Please try again."
-msgstr "Hubo un problema de conectividad de red. Inténtalo de nuevo."
+msgstr "Hubo un problema de conectividad de red. Intentalo de nuevo."
 
 #: src/helpers/getFirebaseError.ts:19
 msgid "This email is already in use. Please use another one."
-msgstr "Este correo electrónico ya está en uso. Por favor usa otro."
+msgstr "Este correo electrónico ya está en uso. Por favor usá otro."
 
 #: src/components/ConfirmVerificationCode.tsx:41
 msgid "We’ve sent you a verification code:"
@@ -91,4 +83,4 @@ msgstr "¡Has sido verificado! Por favor espera."
 
 #: src/helpers/getFirebaseError.ts:14
 msgid "You’ve tried to do that too many times. Please wait a while and try again!"
-msgstr "Has intentado hacer eso muchas veces. ¡Por favor, espera un momento e intenta otra vez!"
+msgstr "Lo intentaste muchas veces. ¡Por favor, esperá un momento e intentá otra vez!"
