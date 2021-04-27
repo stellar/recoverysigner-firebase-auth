@@ -8,7 +8,7 @@ msgstr ""
 "Language: es\n"
 "Project-Id-Version: vibrant-app\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2020-12-09 22:55\n"
+"PO-Revision-Date: 2021-04-27 17:12\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -49,7 +49,7 @@ msgstr "Por favor proporcioná un número de teléfono válido."
 #: src/components/SendVerificationCode.tsx:41
 #: src/components/SendVerificationEmail.tsx:26
 msgid "Please wait…"
-msgstr "Por favor espera…"
+msgstr "Por favor esperá…"
 
 #: src/components/ConfirmVerificationCode.tsx:54
 #: src/components/SentVerificationEmail.tsx:32
