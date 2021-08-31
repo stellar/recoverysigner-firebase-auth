@@ -29,3 +29,5 @@ yarn-error.log*
 /public/config/*
 /src/locales/**/*.js
 /src/locales/_build/
+
+/.tool-versions
