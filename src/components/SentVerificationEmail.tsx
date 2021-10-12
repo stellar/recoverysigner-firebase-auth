@@ -26,8 +26,8 @@ export function SentVerificationEmail() {
         <p className="text-center text-bold">{email}</p>
         <p className="text-center">
           <Trans>
-            Please check your email and click the verification link in the email
-            message to proceed.
+            Please check your email on your device and click the verification
+            link in the email message to proceed.
           </Trans>
         </p>
       </div>
