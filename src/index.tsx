@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { I18nProvider } from "@lingui/react";
+import * as Sentry from "@sentry/browser";
+import { Integrations } from "@sentry/tracing";
 
 import "./index.css";
 import { i18n } from "config/i18n";
@@ -21,6 +23,18 @@ import { AppConfig } from "types.d/AppConfig";
   firebase.auth().languageCode = language;
 
   i18n.activate(language);
+
+  if (appEnv.SENTRY_DSN) {
+    Sentry.init({
+      dsn: appEnv.SENTRY_DSN,
+      integrations: [new Integrations.BrowserTracing()],
+
+      // Set tracesSampleRate to 1.0 to capture 100%
+      // of transactions for performance monitoring.
+      // We recommend adjusting this value in production
+      tracesSampleRate: 1.0,
+    });
+  }
 
   ReactDOM.render(
     <React.StrictMode>
