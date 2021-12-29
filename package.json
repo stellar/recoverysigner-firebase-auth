@@ -5,6 +5,7 @@
   "dependencies": {
     "@babel/core": "^7.10.5",
     "@babel/helper-call-delegate": "^7.11.4",
+    "@babel/helper-validator-option": "^7.14.5",
     "@lingui/babel-preset-react": "^2.9.1",
     "@lingui/cli": "^2.9.1",
     "@lingui/macro": "^2.9.1",
