@@ -1,11 +1,15 @@
 import { auth } from "firebase";
+import * as Sentry from "@sentry/browser";
 
 import { i18n } from "config/i18n";
 
 export function getFirebaseError(error: auth.AuthError | Error) {
   if (!("code" in error)) {
+    Sentry.captureException(new Error(error.toString()));
     return error.toString();
   }
+
+  Sentry.captureException(new Error(`${error.code}: ${error.message}`));
 
   switch (error.code) {
     case "auth/missing-verification-code":
