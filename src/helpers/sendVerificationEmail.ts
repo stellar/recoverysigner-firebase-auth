@@ -15,11 +15,19 @@ interface SendVerificationEmailParams {
   dispatch: Dispatch;
 }
 
-export async function sendVerificationEmail({
+let isSending = false;
+
+export function sendVerificationEmail({
   email,
   dynamicLinkSettings,
   dispatch,
 }: SendVerificationEmailParams) {
+  if (isSending) {
+    return;
+  }
+
+  isSending = true;
+
   const setStatus = buildStatus(SEND_VERIFICATION_EMAIL, dispatch);
   setStatus(StatusType.loading);
 
@@ -29,10 +37,12 @@ export async function sendVerificationEmail({
     .then(() => {
       dispatch(action());
       setStatus(StatusType.success);
+      isSending = false;
     })
     .catch((error) => {
       const message = getFirebaseError(error);
 
       setStatus(StatusType.error, new Error(message));
+      isSending = false;
     });
 }
