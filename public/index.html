@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,6 +7,8 @@
     <script src="config/env-config.js"></script>
 
     <script>
+      document.documentElement.lang = navigator.language;
+
       const style = document.createElement("style");
       style.innerHTML = `
         html, body {
@@ -16,6 +18,10 @@
             ${window.APP_ENV.BACKGROUND_START_COLOR} 0%,
             ${window.APP_ENV.BACKGROUND_END_COLOR} 100%
           );
+        }
+
+        html[lang^="es-"] #root p:not([lang="es"]) {
+          display: none;
         }
       `;
       document.head.appendChild(style);
@@ -61,8 +67,8 @@
       </div>
 
       <div id="root">
-        <p class="text-center text-large">Please wait…</p>
-        <p class="text-center text-large">Por favor esperá…</p>
+        <p lang="en" class="text-center text-large">Please wait…</p>
+        <p lang="es" class="text-center text-large">Por favor esperá…</p>
       </div>
 
       <div id="recaptcha"></div>
