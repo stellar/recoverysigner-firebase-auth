@@ -20,7 +20,7 @@
           );
         }
 
-        html[lang^="es-"] #root p:not([lang="es"]) {
+        html[lang^="es-"] #root .bootstrap p:not([lang="es"]) {
           display: none;
         }
       `;
@@ -67,8 +67,10 @@
       </div>
 
       <div id="root">
-        <p lang="en" class="text-center text-large">Please wait…</p>
-        <p lang="es" class="text-center text-large">Por favor esperá…</p>
+        <div class="bootstrap">
+          <p lang="en" class="text-center text-large">Please wait…</p>
+          <p lang="es" class="text-center text-large">Por favor esperá…</p>
+        </div>
       </div>
 
       <div id="recaptcha"></div>
