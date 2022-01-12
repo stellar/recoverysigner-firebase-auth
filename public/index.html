@@ -4,8 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Recovery Signer Firebase Auth</title>
-    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
     <script src="config/env-config.js"></script>
 
     <script>
@@ -22,8 +20,7 @@
       `;
       document.head.appendChild(style);
 
-
-      setTimeout(function() {
+      setTimeout(function () {
         if (!window.wasInitted && window.Sentry) {
           // loop through scripts
           const scripts = document.getElementsByTagName("script");
@@ -31,7 +28,7 @@
 
           for (var i = 0; i < scripts.length; i++) {
             var script = scripts[i].innerHTML;
-            // skip this script 
+            // skip this script
             if (script.indexOf("SKIP_THIS_SCRIPT") > -1) {
               continue;
             }
@@ -40,17 +37,15 @@
               var mainCallBreakdown = script.split("window.main");
               context["window.main call"] = mainCallBreakdown[0];
               context["split number"] = mainCallBreakdown.length;
-              
             }
           }
 
           Sentry.captureException(
             new Error("window.main wasn't called after 5 seconds"),
-            { context: context }
+            { context: context },
           );
         }
       }, 5000);
-
     </script>
   </head>
   <body>
@@ -66,9 +61,8 @@
       </div>
 
       <div id="root">
-        <p class="text-center text-large">
-          Please wait…
-        </p>
+        <p class="text-center text-large">Please wait…</p>
+        <p class="text-center text-large">Por favor esperá…</p>
       </div>
 
       <div id="recaptcha"></div>

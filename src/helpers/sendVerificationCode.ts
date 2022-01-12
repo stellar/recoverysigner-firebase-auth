@@ -1,5 +1,7 @@
 import { Dispatch } from "redux";
+import { RecaptchaVerifier, PhoneAuthProvider } from "firebase/auth";
 
+import { auth } from "config/firebase";
 import {
   SEND_VERIFICATION_CODE,
   sendVerificationCode as action,
@@ -32,11 +34,13 @@ export async function sendVerificationCode({
     parent.insertBefore(recaptchaContainer, existingRecaptchaContainer);
     parent.removeChild(existingRecaptchaContainer);
 
-    const recaptchaVerifier = new firebase.auth.RecaptchaVerifier("recaptcha", {
-      size: "invisible",
-    });
+    const recaptchaVerifier = new RecaptchaVerifier(
+      "recaptcha",
+      { size: "invisible" },
+      auth(),
+    );
 
-    const provider = new firebase.auth.PhoneAuthProvider(firebase.auth());
+    const provider = new PhoneAuthProvider(auth());
 
     const verificationId = await provider.verifyPhoneNumber(
       phoneNumber as string,

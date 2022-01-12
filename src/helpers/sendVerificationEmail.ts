@@ -1,5 +1,7 @@
 import { Dispatch } from "redux";
+import { sendSignInLinkToEmail } from "firebase/auth";
 
+import { auth } from "config/firebase";
 import {
   SEND_VERIFICATION_EMAIL,
   sendVerificationEmail as action,
@@ -31,9 +33,7 @@ export function sendVerificationEmail({
   const setStatus = buildStatus(SEND_VERIFICATION_EMAIL, dispatch);
   setStatus(StatusType.loading);
 
-  firebase
-    .auth()
-    .sendSignInLinkToEmail(email, dynamicLinkSettings)
+  sendSignInLinkToEmail(auth(), email, dynamicLinkSettings)
     .then(() => {
       dispatch(action());
       setStatus(StatusType.success);

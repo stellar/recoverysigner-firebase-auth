@@ -1,8 +1,8 @@
-import { auth } from "firebase";
+import { AuthError } from "firebase/auth";
 
 import { i18n } from "config/i18n";
 
-export function getFirebaseError(error: auth.AuthError | Error) {
+export function getFirebaseError(error: AuthError | Error) {
   if (!("code" in error)) {
     if ((window as any).Sentry) {
       (window as any).Sentry.captureException(new Error(error.toString()));

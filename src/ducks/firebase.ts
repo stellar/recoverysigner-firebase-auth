@@ -1,4 +1,5 @@
 import { State } from "types.d/State";
+import { PhoneAuthProvider } from "firebase/auth";
 
 type Actions =
   | SendVerificationCodeAction
@@ -38,7 +39,7 @@ interface SendVerificationCodeAction {
 }
 
 interface SendVerificationCodePayload {
-  provider: firebase.auth.PhoneAuthProvider;
+  provider: PhoneAuthProvider;
   verificationId: string;
 }
 

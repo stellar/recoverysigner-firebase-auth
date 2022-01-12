@@ -1,3 +1,5 @@
+import { RecaptchaVerifier } from "firebase/auth";
+
 export interface DynamicLinkSettings {
   dynamicLinkDomain: string;
   url: string;
@@ -17,6 +19,6 @@ export interface AppConfig {
   // required for 'confirm auth with email'
   signInLink?: string;
 
-  recaptchaVerifier: firebase.auth.RecaptchaVerifier;
+  recaptchaVerifier: RecaptchaVerifier;
   language: string;
 }
