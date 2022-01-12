@@ -1,5 +1,7 @@
 import { Dispatch } from "redux";
+import { signInWithEmailLink } from "firebase/auth";
 
+import { auth } from "config/firebase";
 import {
   confirmVerificationEmail as action,
   CONFIRM_VERIFICATION_EMAIL,
@@ -23,10 +25,12 @@ export async function confirmVerificationEmail({
   setStatus(StatusType.loading);
 
   try {
-    const auth = await firebase
-      .auth()
-      .signInWithEmailLink(verificationEmail, verificationUrl);
-    const idToken = await auth.user!.getIdToken();
+    const authRequest = await signInWithEmailLink(
+      auth(),
+      verificationEmail,
+      verificationUrl,
+    );
+    const idToken = await authRequest.user!.getIdToken();
 
     dispatch(action({ idToken }));
     setStatus(StatusType.success);

@@ -2,13 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { I18nProvider } from "@lingui/react";
+import * as Sentry from "@sentry/browser";
 
 import "./index.css";
 import { i18n } from "config/i18n";
+import { initializeFirebase, auth } from "config/firebase";
 import { App } from "components/App";
 import { store } from "ducks/store";
 import { AppConfig } from "types.d/AppConfig";
-import * as Sentry from "@sentry/browser";
 
 (window as any).Sentry = Sentry;
 
@@ -24,12 +25,12 @@ if ((window as any).APP_ENV) {
   const appEnv = (window as any).APP_ENV;
   const language = config.language || "en";
 
-  firebase.initializeApp({
+  initializeFirebase({
     apiKey: appEnv.FIREBASE_WEB_API_KEY,
     projectId: appEnv.FIREBASE_PROJECT_ID,
   });
 
-  firebase.auth().languageCode = language;
+  auth().languageCode = language;
 
   i18n.activate(language);
 

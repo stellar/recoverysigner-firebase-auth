@@ -1,5 +1,7 @@
 import { Dispatch } from "redux";
+import { PhoneAuthProvider, signInWithCredential } from "firebase/auth";
 
+import { auth } from "config/firebase";
 import {
   confirmVerificationCode as action,
   CONFIRM_VERIFICATION_CODE,
@@ -22,14 +24,14 @@ export async function confirmVerificationCode({
   const setStatus = buildStatus(CONFIRM_VERIFICATION_CODE, dispatch);
   setStatus(StatusType.loading);
 
-  const credential = firebase.auth.PhoneAuthProvider.credential(
+  const credential = PhoneAuthProvider.credential(
     verificationId,
     verificationCode,
   );
 
   try {
-    const auth = await firebase.auth().signInWithCredential(credential);
-    const idToken = await auth.user!.getIdToken();
+    const authRequest = await signInWithCredential(auth(), credential);
+    const idToken = await authRequest.user!.getIdToken();
 
     dispatch(action({ idToken }));
     setStatus(StatusType.success);
