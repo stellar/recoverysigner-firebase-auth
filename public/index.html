@@ -34,10 +34,10 @@
         });
 
         setTimeout(function() {
-          if (!window.wasInitted) {
+          if (!window.wasInitted && Sentry) {
             // loop through scripts
             const scripts = document.getElementsByTagName("script");
-            var mainCall = undefined;
+            var context = {};
 
             for (var i = 0; i < scripts.length; i++) {
               var script = scripts[i].innerHTML;
@@ -47,14 +47,16 @@
               }
 
               if (script.indexOf("window.main") > -1) {
-                mainCallBreakdown = script.split("window.main");
+                var mainCallBreakdown = script.split("window.main");
+                context["window.main call"] = mainCallBreakdown[0];
+                context["split number"] = mainCallBreakdown.length;
                 
               }
             }
 
             Sentry.captureException(
               new Error("window.main wasn't called after 5 seconds"),
-              { context: { "window.main call": mainCallBreakdown[0], "split number": mainCallBreakdown.length } }
+              { context: context }
             );
           }
         }, 5000);
