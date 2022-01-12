@@ -28,9 +28,9 @@
       document.head.appendChild(style);
 
 
-      if (window.appEnv.SENTRY_DSN && Sentry) {
+      if (window.APP_ENV && window.APP_ENV.SENTRY_DSN && Sentry) {
         Sentry.init({
-          dsn: window.appEnv.SENTRY_DSN,
+          dsn: window.APP_ENV.SENTRY_DSN,
         });
       }
 
