@@ -32,6 +32,32 @@
         Sentry.init({
           dsn: window.APP_ENV.SENTRY_DSN,
         });
+
+        setTimeout(function() {
+          if (!window.wasInitted) {
+            // loop through scripts
+            const scripts = document.getElementsByTagName("script");
+            var mainCall = undefined;
+
+            for (var i = 0; i < scripts.length; i++) {
+              var script = scripts[i].innerHTML;
+              // skip this script 
+              if (script.indexOf("SKIP_THIS_SCRIPT") > -1) {
+                continue;
+              }
+
+              if (script.indexOf("window.main") > -1) {
+                mainCallBreakdown = script.split("window.main");
+                
+              }
+            }
+
+            Sentry.captureException(
+              new Error("window.main wasn't called after 5 seconds"),
+              { context: { "window.main call": mainCallBreakdown[0], "split number": mainCallBreakdown.length } }
+            );
+          }
+        }, 5000);
       }
 
     </script>

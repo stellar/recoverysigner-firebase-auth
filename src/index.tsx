@@ -10,6 +10,8 @@ import { store } from "ducks/store";
 import { AppConfig } from "types.d/AppConfig";
 
 (window as any).main = function main(config: AppConfig) {
+  (window as any).wasInitted = true;
+
   const appEnv = (window as any).APP_ENV;
   const language = config.language || "en";
 
