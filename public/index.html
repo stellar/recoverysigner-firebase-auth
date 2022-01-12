@@ -7,11 +7,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
     <script src="config/env-config.js"></script>
-    <script
-    src="https://browser.sentry-cdn.com/6.16.1/bundle.min.js"
-    integrity="sha384-WkFzsrcXKeJ3KlWNXojDiim8rplIj1RPsCbuv7dsLECoXY8C6Cx158CMgl+O+QKW"
-    crossorigin="anonymous"
-  ></script>
 
     <script>
       const style = document.createElement("style");
@@ -28,39 +23,33 @@
       document.head.appendChild(style);
 
 
-      if (window.APP_ENV && window.APP_ENV.SENTRY_DSN && Sentry) {
-        Sentry.init({
-          dsn: window.APP_ENV.SENTRY_DSN,
-        });
+      setTimeout(function() {
+        if (!window.wasInitted && window.Sentry) {
+          // loop through scripts
+          const scripts = document.getElementsByTagName("script");
+          var context = {};
 
-        setTimeout(function() {
-          if (!window.wasInitted && Sentry) {
-            // loop through scripts
-            const scripts = document.getElementsByTagName("script");
-            var context = {};
-
-            for (var i = 0; i < scripts.length; i++) {
-              var script = scripts[i].innerHTML;
-              // skip this script 
-              if (script.indexOf("SKIP_THIS_SCRIPT") > -1) {
-                continue;
-              }
-
-              if (script.indexOf("window.main") > -1) {
-                var mainCallBreakdown = script.split("window.main");
-                context["window.main call"] = mainCallBreakdown[0];
-                context["split number"] = mainCallBreakdown.length;
-                
-              }
+          for (var i = 0; i < scripts.length; i++) {
+            var script = scripts[i].innerHTML;
+            // skip this script 
+            if (script.indexOf("SKIP_THIS_SCRIPT") > -1) {
+              continue;
             }
 
-            Sentry.captureException(
-              new Error("window.main wasn't called after 5 seconds"),
-              { context: context }
-            );
+            if (script.indexOf("window.main") > -1) {
+              var mainCallBreakdown = script.split("window.main");
+              context["window.main call"] = mainCallBreakdown[0];
+              context["split number"] = mainCallBreakdown.length;
+              
+            }
           }
-        }, 5000);
-      }
+
+          Sentry.captureException(
+            new Error("window.main wasn't called after 5 seconds"),
+            { context: context }
+          );
+        }
+      }, 5000);
 
     </script>
   </head>
