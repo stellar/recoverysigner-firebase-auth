@@ -10,7 +10,6 @@
     "@lingui/cli": "^2.9.1",
     "@lingui/macro": "^2.9.1",
     "@lingui/react": "^2.9.1",
-    "@sentry/browser": "^6.16.1",
     "@stellar/eslint-config": "^1.0.3",
     "@stellar/prettier-config": "^1.0.1",
     "@stellar/tsconfig": "^1.0.2",

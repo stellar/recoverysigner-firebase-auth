@@ -7,6 +7,11 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
     <script src="config/env-config.js"></script>
+    <script
+    src="https://browser.sentry-cdn.com/6.16.1/bundle.min.js"
+    integrity="sha384-WkFzsrcXKeJ3KlWNXojDiim8rplIj1RPsCbuv7dsLECoXY8C6Cx158CMgl+O+QKW"
+    crossorigin="anonymous"
+  ></script>
 
     <script>
       const style = document.createElement("style");
@@ -21,6 +26,14 @@
         }
       `;
       document.head.appendChild(style);
+
+
+      if (window.appEnv.SENTRY_DSN && Sentry) {
+        Sentry.init({
+          dsn: window.appEnv.SENTRY_DSN,
+        });
+      }
+
     </script>
   </head>
   <body>
