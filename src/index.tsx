@@ -2,15 +2,25 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { I18nProvider } from "@lingui/react";
-import * as Sentry from "@sentry/browser";
 
 import "./index.css";
 import { i18n } from "config/i18n";
 import { App } from "components/App";
 import { store } from "ducks/store";
 import { AppConfig } from "types.d/AppConfig";
+import * as Sentry from "@sentry/browser";
+
+(window as any).Sentry = Sentry;
+
+if ((window as any).APP_ENV) {
+  Sentry.init({
+    dsn: (window as any).APP_ENV.SENTRY_DSN,
+  });
+}
 
 (window as any).main = function main(config: AppConfig) {
+  (window as any).wasInitted = true;
+
   const appEnv = (window as any).APP_ENV;
   const language = config.language || "en";
 
@@ -22,12 +32,6 @@ import { AppConfig } from "types.d/AppConfig";
   firebase.auth().languageCode = language;
 
   i18n.activate(language);
-
-  if (appEnv.SENTRY_DSN) {
-    Sentry.init({
-      dsn: appEnv.SENTRY_DSN,
-    });
-  }
 
   ReactDOM.render(
     <React.StrictMode>
