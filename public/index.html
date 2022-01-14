@@ -28,30 +28,11 @@
 
       setTimeout(function () {
         if (!window.wasInitted && window.Sentry) {
-          // loop through scripts
-          const scripts = document.getElementsByTagName("script");
-          var context = {};
-
-          for (var i = 0; i < scripts.length; i++) {
-            var script = scripts[i].innerHTML;
-            // skip this script
-            if (script.indexOf("SKIP_THIS_SCRIPT") > -1) {
-              continue;
-            }
-
-            if (script.indexOf("window.main") > -1) {
-              var mainCallBreakdown = script.split("window.main");
-              context["window.main call"] = mainCallBreakdown[0];
-              context["split number"] = mainCallBreakdown.length;
-            }
-          }
-
           Sentry.captureException(
             new Error("window.main wasn't called after 5 seconds"),
-            { context: context },
           );
         }
-      }, 5000);
+      }, 2000);
     </script>
   </head>
   <body>
