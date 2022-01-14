@@ -9,7 +9,7 @@
     <script>
       document.documentElement.lang = navigator.language;
 
-      const style = document.createElement("style");
+      var style = document.createElement("style");
       style.innerHTML = `
         html, body {
           color: ${window.APP_ENV.TEXT_COLOR};
@@ -23,11 +23,55 @@
         html[lang^="es-"] #root .bootstrap p:not([lang="es"]) {
           display: none;
         }
+
+        .banner {
+          background-color: #D9534F;
+          color: #fff;
+          text-align: center;
+          margin: 0;
+          padding: 15px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+        }
       `;
       document.head.appendChild(style);
 
       setTimeout(function () {
         if (!window.wasInitted && window.Sentry) {
+          var userAgent = navigator.userAgent;
+
+          var isAndroid = userAgent.indexOf("Android") > -1;
+          var isWebview = userAgent.indexOf("wv") > -1;
+          var isChromeLollipop = userAgent.indexOf("Chrome/") > -1 &&  userAgent.indexOf("Version/") > -1;
+          var isChromeWebview = userAgent.indexOf("Chrome/") > -1 &&  isWebview;
+
+          var content = null;
+
+          if (isAndroid && isWebview) {
+            content = "Please update Android WebView to sign in!";
+          }
+
+          if (isChromeLollipop && isChromeWebview) {
+            content = "Please update Chrome to sign in!";
+          }
+
+          if (content) {
+            var banner = document.createElement("p");
+            banner.classList.add("banner");
+            banner.textContent = content;
+            document.getElementById("root").appendChild(banner);
+          }
+
+          Sentry.setContext("Webview info", {
+            isAndroid: isAndroid,
+            isWebview: isWebview,
+            isChromeLollipop: isChromeLollipop,
+            isChromeWebview: isChromeWebview,
+            content: content
+          });
+          
           Sentry.captureException(
             new Error("window.main wasn't called after 5 seconds"),
           );
@@ -40,7 +84,7 @@
     <div class="main-container">
       <div class="text-center logo-container">
         <script>
-          const image = new Image();
+          var image = new Image();
           image.src = window.APP_ENV.LOGO_URL;
           image.className = "logo";
           document.querySelector(".logo-container").appendChild(image);
