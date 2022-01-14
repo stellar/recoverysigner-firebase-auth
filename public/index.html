@@ -49,12 +49,12 @@
 
           var content = null;
 
-          if (isAndroid && isWebview) {
-            content = "Please update Android WebView to sign in!";
+          if (isAndroid && isWebview || true) {
+            content = "Actualice Android WebView para iniciar sesión.";
           }
 
           if (isChromeLollipop && isChromeWebview) {
-            content = "Please update Chrome to sign in!";
+            content = "Actualice Chrome para iniciar sesión.";
           }
 
           if (content) {
@@ -65,7 +65,7 @@
 
             root.innerHTML = `
               <p lang="es" class="text-center text-large">
-                Your device’s browser is not supported, please update it or update Vibrant.
+                El navegador de su dispositivo no es compatible, actualícelo o actualice Vibrant.
               </p>
               `;
 
