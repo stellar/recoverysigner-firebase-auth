@@ -61,7 +61,17 @@
             var banner = document.createElement("p");
             banner.classList.add("banner");
             banner.textContent = content;
-            document.getElementById("root").appendChild(banner);
+            var root = document.getElementById("root");
+
+            root.innerHTML = `
+              <p lang="es" class="text-center text-large">
+                Your device’s browser is not supported, please update it or update Vibrant.
+              </p>
+              `;
+
+            root.appendChild(banner);
+
+          
           }
 
           Sentry.setContext("Webview info", {
