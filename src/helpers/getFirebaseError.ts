@@ -1,8 +1,12 @@
-import { AuthError } from "firebase/auth";
+import { i18n } from "@lingui/core";
 
-import { i18n } from "config/i18n";
+interface FirebaseError extends Error {
+  code: string;
+  message: string;
+  stack?: string;
+}
 
-export function getFirebaseError(error: AuthError | Error) {
+export function getFirebaseError(error: FirebaseError | Error) {
   if (!("code" in error)) {
     if ((window as any).Sentry) {
       (window as any).Sentry.captureException(new Error(error.toString()));

@@ -25,8 +25,8 @@ msgstr "If the below email address is associated with an account, you will recei
 
 #: src/helpers/getFirebaseError.ts:27
 #: src/helpers/getFirebaseError.ts:32
-msgid "Oops! Please try again in a few minutes. (error code: {0})"
-msgstr "Oops! Please try again in a few minutes. (error code: {0})"
+#~ msgid "Oops! Please try again in a few minutes. (error code: {0})"
+#~ msgstr "Oops! Please try again in a few minutes. (error code: {0})"
 
 #: src/components/SentVerificationEmail.tsx:22
 #~ msgid "Please check your email and click the verification link in the email message to proceed."
@@ -37,12 +37,12 @@ msgid "Please check your email on your device and click the verification link in
 msgstr "Please check your email on your device and click the verification link in the email message to proceed."
 
 #: src/helpers/getFirebaseError.ts:17
-msgid "Please fill out the captcha to proceed."
-msgstr "Please fill out the captcha to proceed."
+#~ msgid "Please fill out the captcha to proceed."
+#~ msgstr "Please fill out the captcha to proceed."
 
 #: src/helpers/getFirebaseError.ts:12
-msgid "Please provide a valid phone number."
-msgstr "Please provide a valid phone number."
+#~ msgid "Please provide a valid phone number."
+#~ msgstr "Please provide a valid phone number."
 
 #: src/components/ConfirmVerificationEmail.tsx:35
 #: src/components/SendVerificationCode.tsx:41
@@ -60,16 +60,16 @@ msgid "Send verification code"
 msgstr "Send verification code"
 
 #: src/helpers/getFirebaseError.ts:9
-msgid "The confirmation code you provided is invalid."
-msgstr "The confirmation code you provided is invalid."
+#~ msgid "The confirmation code you provided is invalid."
+#~ msgstr "The confirmation code you provided is invalid."
 
 #: src/helpers/getFirebaseError.ts:21
-msgid "There was a network connectivity issue. Please try again."
-msgstr "There was a network connectivity issue. Please try again."
+#~ msgid "There was a network connectivity issue. Please try again."
+#~ msgstr "There was a network connectivity issue. Please try again."
 
 #: src/helpers/getFirebaseError.ts:19
-msgid "This email is already in use. Please use another one."
-msgstr "This email is already in use. Please use another one."
+#~ msgid "This email is already in use. Please use another one."
+#~ msgstr "This email is already in use. Please use another one."
 
 #: src/components/ConfirmVerificationCode.tsx:41
 msgid "We’ve sent you a verification code:"
@@ -81,5 +81,5 @@ msgid "You’ve been verified! Please wait."
 msgstr "You’ve been verified! Please wait."
 
 #: src/helpers/getFirebaseError.ts:14
-msgid "You’ve tried to do that too many times. Please wait a while and try again!"
-msgstr "You’ve tried to do that too many times. Please wait a while and try again!"
+#~ msgid "You’ve tried to do that too many times. Please wait a while and try again!"
+#~ msgstr "You’ve tried to do that too many times. Please wait a while and try again!"
