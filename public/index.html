@@ -63,11 +63,10 @@
             banner.textContent = content;
             var root = document.getElementById("root");
 
-            root.innerHTML = `
-              <p lang="es" class="text-center text-large">
-                El navegador de tu dispositivo no es compatible.  Actualizá tu navegador o bajate la última versión de Vibrant.
-              </p>
-              `;
+            root.innerHTML = '<p lang="es" class="text-center text-large">' +
+              'El navegador de tu dispositivo no es compatible. ' +
+              'Actualizá tu navegador o bajate la última versión de Vibrant.' +
+              '</p>';
 
             root.appendChild(banner);
 
