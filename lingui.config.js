@@ -18,6 +18,6 @@ module.exports = {
   orderBy: "messageId",
   pseudoLocale: "",
   rootDir: ".",
-  runtimeConfigModule: ["@lingui/core", "i18n"],
+  runtimeConfigModule: ["./config/i18n", "@lingui/core", "i18n"],
   sourceLocale: "en",
 };
