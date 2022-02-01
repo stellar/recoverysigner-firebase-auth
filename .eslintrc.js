@@ -12,5 +12,6 @@ module.exports = {
     "react/prop-types": "off",
     "valid-jsdoc": "off",
     "import/extensions": "off",
+    "@typescript-eslint/naming-convention": ["warn"],
   },
 };

@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
+import { i18n } from "@lingui/core";
 import { I18nProvider } from "@lingui/react";
 import * as Sentry from "@sentry/browser";
 
 import "./index.css";
-import { i18n } from "config/i18n";
 import { initializeFirebase, auth } from "config/firebase";
 import { App } from "components/App";
 import { store } from "ducks/store";
@@ -37,7 +37,7 @@ if ((window as any).APP_ENV) {
   ReactDOM.render(
     <React.StrictMode>
       <Provider store={store}>
-        <I18nProvider i18n={i18n} language={language}>
+        <I18nProvider i18n={i18n}>
           <App config={{ ...config }} />
         </I18nProvider>
       </Provider>
