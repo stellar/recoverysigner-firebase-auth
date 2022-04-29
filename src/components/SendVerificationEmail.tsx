@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Trans } from "@lingui/macro";
+import { debounce } from "lodash";
 
 import { SEND_VERIFICATION_EMAIL } from "ducks/firebase";
 import { setPage } from "ducks/page";
@@ -14,11 +15,18 @@ export function SendVerificationEmail() {
   const sendEmailStatus = useStatus(SEND_VERIFICATION_EMAIL);
   const { email, dynamicLinkSettings } = useSelector((state: State) => state);
 
+  const sendVerificationEmailDebounce = useCallback(
+    debounce(() => {
+      if (email && dynamicLinkSettings) {
+        sendVerificationEmail({ email, dynamicLinkSettings, dispatch });
+      }
+    }, 1000),
+    [email, dynamicLinkSettings, dispatch],
+  );
+
   useEffect(() => {
-    if (email && dynamicLinkSettings) {
-      sendVerificationEmail({ email, dynamicLinkSettings, dispatch });
-    }
-  }, [email, dynamicLinkSettings, dispatch]);
+    sendVerificationEmailDebounce();
+  }, [sendVerificationEmailDebounce]);
 
   useEffect(() => {
     if (sendEmailStatus.isSuccess) {
