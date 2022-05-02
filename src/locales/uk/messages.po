@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2020-07-20 15:50-0700\n"
+"POT-Creation-Date: 2020-07-20 15:25-0700\n"
 "Mime-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -8,7 +8,7 @@ msgstr ""
 "Language: uk\n"
 "Project-Id-Version: vibrant-app\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2022-04-27 05:40\n"
+"PO-Revision-Date: 2022-05-02 18:37\n"
 "Last-Translator: \n"
 "Language-Team: Ukrainian\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
@@ -30,7 +30,7 @@ msgstr "Якщо вказана нижче адреса електронної �
 
 #: src/components/SentVerificationEmail.tsx:22
 msgid "Please check your email on your device and click the verification link in the email message to proceed."
-msgstr ""
+msgstr "Для продовження, перевірте свою поштову скриньку на вашому пристрої та натисніть на посилання для підтвердження в електронному листі, який ми вам надіслали."
 
 #: src/components/ConfirmVerificationEmail.tsx:35
 #: src/components/SendVerificationCode.tsx:41
@@ -55,3 +55,4 @@ msgstr "Ми надіслали вам код підтвердження:"
 #: src/components/ConfirmVerificationEmail.tsx:28
 msgid "You’ve been verified! Please wait."
 msgstr "Ви пройшли перевірку. Зачекайте."
+
