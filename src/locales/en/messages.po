@@ -14,8 +14,8 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: src/components/ConfirmVerificationEmail.tsx:40
-#: src/components/SendVerificationCode.tsx:46
-#: src/components/SendVerificationEmail.tsx:31
+#: src/components/SendVerificationCode.tsx:50
+#: src/components/SendVerificationEmail.tsx:35
 msgid "Error: {0}"
 msgstr "Error: {0}"
 
@@ -27,9 +27,17 @@ msgstr "If the below email address is associated with an account, you will recei
 msgid "Please check your email on your device and click the verification link in the email message to proceed."
 msgstr "Please check your email on your device and click the verification link in the email message to proceed."
 
+#: src/config/i18n.ts:15
+msgid "Please update Android WebView to start the session."
+msgstr "Please update Android WebView to start the session."
+
+#: src/config/i18n.ts:16
+msgid "Please update Google Chrome to start the session."
+msgstr "Please update Google Chrome to start the session."
+
 #: src/components/ConfirmVerificationEmail.tsx:35
-#: src/components/SendVerificationCode.tsx:41
-#: src/components/SendVerificationEmail.tsx:26
+#: src/components/SendVerificationCode.tsx:45
+#: src/components/SendVerificationEmail.tsx:30
 msgid "Please wait…"
 msgstr "Please wait…"
 
@@ -38,13 +46,17 @@ msgstr "Please wait…"
 msgid "Resend"
 msgstr "Resend"
 
-#: src/components/SendVerificationCode.tsx:52
+#: src/components/SendVerificationCode.tsx:56
 msgid "Send verification code"
 msgstr "Send verification code"
 
 #: src/components/ConfirmVerificationCode.tsx:41
 msgid "We’ve sent you a verification code:"
 msgstr "We’ve sent you a verification code:"
+
+#: src/config/i18n.ts:17
+msgid "Your device’s browser is not compatible. Please update your browser and Vibrant to the latest version."
+msgstr "Your device’s browser is not compatible. Please update your browser and Vibrant to the latest version."
 
 #: src/components/ConfirmVerificationCode.tsx:34
 #: src/components/ConfirmVerificationEmail.tsx:28

@@ -5,37 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Recovery Signer Firebase Auth</title>
     <script src="config/env-config.js"></script>
+    <style type="text/css">
+      html[lang^="en-"] #root .static .text:not([lang="en"]) {
+        display: none;
+      }
+
+      html[lang^="es-"] #root .static .text:not([lang="es"]) {
+        display: none;
+      }
+
+      html[lang^="uk-"] #root .static .text:not([lang="uk"]) {
+        display: none;
+      }
+
+      html[lang^="ru-"] #root .static .text:not([lang="ru"]) {
+        display: none;
+      }
+
+      #root .static h1 {
+        font-size: 18px;
+      }
+
+      #root .static {
+        text-align: center;
+      }
+    </style>
 
     <script>
-      document.documentElement.lang = navigator.language;
+      var lang = navigator.language.match(/^(en|es|ru|uk)-/)
+        ? navigator.language
+        : "en-US";
+
+      document.documentElement.lang = lang;
 
       var style = document.createElement("style");
-      style.innerHTML = `
-        html, body {
-          color: ${window.APP_ENV.TEXT_COLOR};
-          background-image: linear-gradient(
-            180deg,
-            ${window.APP_ENV.BACKGROUND_START_COLOR} 0%,
-            ${window.APP_ENV.BACKGROUND_END_COLOR} 100%
-          );
-        }
-
-        html[lang^="es-"] #root .bootstrap p:not([lang="es"]) {
-          display: none;
-        }
-
-        .banner {
-          background-color: #D9534F;
-          color: #fff;
-          text-align: center;
-          margin: 0;
-          padding: 15px;
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-        }
-      `;
+      style.innerHTML = [
+        "html, body {",
+        "color: " + window.APP_ENV.TEXT_COLOR + ";",
+        "background-image: linear-gradient(",
+        "180deg,",
+        window.APP_ENV.BACKGROUND_START_COLOR + " 0%,",
+        window.APP_ENV.BACKGROUND_END_COLOR + " 100%",
+        ");",
+        "}",
+      ].join("\n");
       document.head.appendChild(style);
 
       setTimeout(function () {
@@ -44,33 +57,24 @@
 
           var isAndroid = userAgent.indexOf("Android") > -1;
           var isWebview = userAgent.indexOf("wv") > -1;
-          var isChromeLollipop = userAgent.indexOf("Chrome/") > -1 &&  userAgent.indexOf("Version/") > -1;
-          var isChromeWebview = userAgent.indexOf("Chrome/") > -1 &&  isWebview;
-
-          var content = null;
+          var isChromeLollipop =
+            userAgent.indexOf("Chrome/") > -1 &&
+            userAgent.indexOf("Version/") > -1;
+          var isChromeWebview = userAgent.indexOf("Chrome/") > -1 && isWebview;
+          var errorSelector = "";
 
           if (isAndroid && isWebview) {
-            content = "Actualice Android WebView para iniciar sesión.";
+            errorSelector = ".outdated-webview-error";
           }
 
           if (isChromeLollipop && isChromeWebview) {
-            content = "Actualice Chrome para iniciar sesión.";
+            errorSelector = ".outdated-chrome-error";
           }
 
-          if (content) {
-            var banner = document.createElement("p");
-            banner.classList.add("banner");
-            banner.textContent = content;
-            var root = document.getElementById("root");
-
-            root.innerHTML = '<p lang="es" class="text-center text-large">' +
-              'El navegador de tu dispositivo no es compatible. ' +
-              'Actualizá tu navegador o bajate la última versión de Vibrant.' +
-              '</p>';
-
-            root.appendChild(banner);
-
-          
+          if (errorSelector) {
+            document.querySelector(".bootstrap").hidden = true;
+            document.querySelector(errorSelector).hidden = false;
+            document.querySelector(".outdated-error").hidden = false;
           }
 
           Sentry.setContext("Webview info", {
@@ -78,9 +82,11 @@
             isWebview: isWebview,
             isChromeLollipop: isChromeLollipop,
             isChromeWebview: isChromeWebview,
-            content: content
+            errorSelector: errorSelector,
+            language: navigator.language,
+            detectedLanguage: document.documentElement.lang,
           });
-          
+
           Sentry.captureException(
             new Error("window.main wasn't called after 5 seconds"),
           );
@@ -101,9 +107,44 @@
       </div>
 
       <div id="root">
-        <div class="bootstrap">
-          <p lang="en" class="text-center text-large">Please wait…</p>
-          <p lang="es" class="text-center text-large">Por favor esperá…</p>
+        <div class="static">
+          <div class="bootstrap">
+            <p lang="en" class="text text-center text-large">Please wait…</p>
+            <p lang="es" class="text text-center text-large">
+              Por favor esperá…
+            </p>
+            <p lang="uk" class="text text-center text-large">Зачекайте…</p>
+            <p lang="ru" class="text text-center text-large">Зачекайте…</p>
+          </div>
+
+          <div hidden class="outdated-webview-error">
+            <h1 class="text" lang="en">
+              Please update Android WebView to start the session.
+            </h1>
+            <h1 class="text" lang="es">
+              Actualice Android WebView para iniciar sesión.
+            </h1>
+          </div>
+
+          <div hidden class="outdated-chrome-error">
+            <h1 class="text" lang="en">
+              Please update Google Chrome to start the session.
+            </h1>
+            <h1 class="text" lang="es">
+              Actualice Google Chrome para iniciar sesión.
+            </h1>
+          </div>
+
+          <div hidden class="outdated-error">
+            <p class="text" lang="en">
+              Your device’s browser is not compatible. Please update your
+              browser and Vibrant to the latest version.
+            </p>
+            <p class="text" lang="es">
+              El navegador de tu dispositivo no es compatible. Actualizá tu
+              navegador o bajate la última versión de Vibrant.
+            </p>
+          </div>
         </div>
       </div>
 
