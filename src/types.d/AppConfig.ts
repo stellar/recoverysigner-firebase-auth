@@ -20,5 +20,7 @@ export interface AppConfig {
   signInLink?: string;
 
   recaptchaVerifier: RecaptchaVerifier;
+
+  // accepts both "en" and "en-US" formats
   language: string;
 }
