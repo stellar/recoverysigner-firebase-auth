@@ -5,16 +5,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
-"Language: uk\n"
+"Language: es_AR\n"
 "Project-Id-Version: vibrant-app\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2022-10-20 12:43\n"
+"PO-Revision-Date: 2022-10-20 12:42\n"
 "Last-Translator: \n"
-"Language-Team: Ukrainian\n"
-"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"Language-Team: Spanish, Argentina\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: vibrant-app\n"
 "X-Crowdin-Project-ID: 409066\n"
-"X-Crowdin-Language: uk\n"
+"X-Crowdin-Language: es-AR\n"
 "X-Crowdin-File: /recoverysigner-firebase-auth/messages.po\n"
 "X-Crowdin-File-ID: 64\n"
 
@@ -22,49 +22,49 @@ msgstr ""
 #: src/components/SendVerificationCode.tsx:50
 #: src/components/SendVerificationEmail.tsx:35
 msgid "Error: {0}"
-msgstr "Помилка: {0}"
+msgstr "Error: {0}"
 
 #: src/components/SentVerificationEmail.tsx:15
 msgid "If the below email address is associated with an account, you will receive a verification email."
-msgstr "Якщо вказана нижче адреса електронної пошти пов’язана з обліковим записом, ви отримаєте електронний лист із підтвердженням."
+msgstr "Si la dirección de email, aquí debajo, está asociada con una cuenta, vas a recibir un email de verificación."
 
 #: src/components/SentVerificationEmail.tsx:22
 msgid "Please check your email on your device and click the verification link in the email message to proceed."
-msgstr "Для продовження, перевірте свою поштову скриньку на вашому пристрої та натисніть на посилання для підтвердження в електронному листі, який ми вам надіслали."
+msgstr "Por favor, abrí en tu celular el correo que te enviamos y hacé clic en el link de verificación para proceder."
 
 #: src/config/i18n.ts:15
 msgid "Please update Android WebView to start the session."
-msgstr "Будь ласка, оновіть Android WebView, щоб розпочати сесію."
+msgstr "Por favor actualizá tu Android WebView para comenzar sesión."
 
 #: src/config/i18n.ts:16
 msgid "Please update Google Chrome to start the session."
-msgstr "Будь ласка, оновіть Google Chrome, щоб розпочати сесію."
+msgstr "Por favor actualizá Google Chrome para comenzar la sesión."
 
 #: src/components/ConfirmVerificationEmail.tsx:35
 #: src/components/SendVerificationCode.tsx:45
 #: src/components/SendVerificationEmail.tsx:30
 msgid "Please wait…"
-msgstr "Зачекайте…"
+msgstr "Por favor esperá…"
 
 #: src/components/ConfirmVerificationCode.tsx:54
 #: src/components/SentVerificationEmail.tsx:32
 msgid "Resend"
-msgstr "Надіслати повторно"
+msgstr "Reenviar"
 
 #: src/components/SendVerificationCode.tsx:56
 msgid "Send verification code"
-msgstr "Надіслати код підтвердження"
+msgstr "Enviar código de verificación"
 
 #: src/components/ConfirmVerificationCode.tsx:41
 msgid "We’ve sent you a verification code:"
-msgstr "Ми надіслали вам код підтвердження:"
+msgstr "Te hemos enviado un código de verificación:"
 
 #: src/config/i18n.ts:17
 msgid "Your device’s browser is not compatible. Please update your browser and Vibrant to the latest version."
-msgstr "На вашому пристрої встановлена застаріла версія браузера. Будь ласка, оновіть ваш браузер і додаток Vibrant до останньої версії."
+msgstr "El navegador en tu dispositivo no es compatible. Por favor actualizá el navegador y la app de Vibrant a sus últimas versiones."
 
 #: src/components/ConfirmVerificationCode.tsx:34
 #: src/components/ConfirmVerificationEmail.tsx:28
 msgid "You’ve been verified! Please wait."
-msgstr "Ви пройшли перевірку. Зачекайте."
+msgstr "¡Has sido verificado! Por favor espera."
 

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2020-07-20 15:50-0700\n"
+"POT-Creation-Date: 2020-07-20 15:25-0700\n"
 "Mime-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -8,7 +8,7 @@ msgstr ""
 "Language: es\n"
 "Project-Id-Version: vibrant-app\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-04-27 17:12\n"
+"PO-Revision-Date: 2022-10-20 12:42\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -30,15 +30,15 @@ msgstr "Si la dirección de email, aquí debajo, está asociada con una cuenta, 
 
 #: src/components/SentVerificationEmail.tsx:22
 msgid "Please check your email on your device and click the verification link in the email message to proceed."
-msgstr "Por favor, abrí en tu celular el correo que te enviamos y seguí el link de verificación para proceder."
+msgstr "Por favor, abre en tu celular el correo que te enviamos y haz click en el link de verificación para proceder."
 
 #: src/config/i18n.ts:15
 msgid "Please update Android WebView to start the session."
-msgstr "Actualice Android WebView para iniciar sesión."
+msgstr "Por favor actualiza tu Android WebView para comenzar sesión."
 
 #: src/config/i18n.ts:16
 msgid "Please update Google Chrome to start the session."
-msgstr "Actualice Google Chrome para iniciar sesión."
+msgstr "Por favor acutaliza Google Chrome antes de comenzar la sesión."
 
 #: src/components/ConfirmVerificationEmail.tsx:35
 #: src/components/SendVerificationCode.tsx:45
@@ -61,9 +61,10 @@ msgstr "Te hemos enviado un código de verificación:"
 
 #: src/config/i18n.ts:17
 msgid "Your device’s browser is not compatible. Please update your browser and Vibrant to the latest version."
-msgstr "El navegador de tu dispositivo no es compatible. Actualizá tu navegador o bajate la última versión de Vibrant."
+msgstr "El navegador en tu dispositivo no es compatible. Por favor actualiza tu navegador y la app de Vibrant a sus últimas versiones."
 
 #: src/components/ConfirmVerificationCode.tsx:34
 #: src/components/ConfirmVerificationEmail.tsx:28
 msgid "You’ve been verified! Please wait."
 msgstr "¡Has sido verificado! Por favor espera."
+
