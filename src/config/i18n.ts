@@ -2,12 +2,15 @@ import { Catalog, setupI18n } from "@lingui/core";
 
 import en from "locales/en/messages";
 import es from "locales/es/messages";
+import esAR from "locales/es-AR/messages";
 import uk from "locales/uk/messages";
 
-const catalogs: { [key: string]: Catalog } = {
+export const catalogs: { [key: string]: Catalog } = {
   en,
   es,
+  "es-AR": esAR,
   uk,
+  ru: uk,
 };
 
 export const i18n = setupI18n({

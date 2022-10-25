@@ -9,6 +9,7 @@ import { i18n } from "config/i18n";
 import { initializeFirebase, auth } from "config/firebase";
 import { App } from "components/App";
 import { store } from "ducks/store";
+import { determineLanguage } from "helpers/determineLanguage";
 import { AppConfig } from "types.d/AppConfig";
 
 (window as any).Sentry = Sentry;
@@ -23,7 +24,7 @@ if ((window as any).APP_ENV) {
   (window as any).wasInitted = true;
 
   const appEnv = (window as any).APP_ENV;
-  const language = config.language || "en";
+  const language = determineLanguage(config.language || "en");
 
   initializeFirebase({
     apiKey: appEnv.FIREBASE_WEB_API_KEY,
