@@ -28,12 +28,12 @@ msgid "Please check your email on your device and click the verification link in
 msgstr "Please check your email on your device and click the verification link in the email message to proceed."
 
 #: src/config/i18n.ts:15
-msgid "Please update Android WebView to start the session."
-msgstr "Please update Android WebView to start the session."
+#~ msgid "Please update Android WebView to start the session."
+#~ msgstr "Please update Android WebView to start the session."
 
 #: src/config/i18n.ts:16
-msgid "Please update Google Chrome to start the session."
-msgstr "Please update Google Chrome to start the session."
+#~ msgid "Please update Google Chrome to start the session."
+#~ msgstr "Please update Google Chrome to start the session."
 
 #: src/components/ConfirmVerificationEmail.tsx:35
 #: src/components/SendVerificationCode.tsx:45
@@ -55,8 +55,8 @@ msgid "We’ve sent you a verification code:"
 msgstr "We’ve sent you a verification code:"
 
 #: src/config/i18n.ts:17
-msgid "Your device’s browser is not compatible. Please update your browser and Vibrant to the latest version."
-msgstr "Your device’s browser is not compatible. Please update your browser and Vibrant to the latest version."
+#~ msgid "Your device’s browser is not compatible. Please update your browser and Vibrant to the latest version."
+#~ msgstr "Your device’s browser is not compatible. Please update your browser and Vibrant to the latest version."
 
 #: src/components/ConfirmVerificationCode.tsx:34
 #: src/components/ConfirmVerificationEmail.tsx:28

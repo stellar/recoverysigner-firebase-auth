@@ -12,8 +12,10 @@ export function determineLanguage(input: string): string {
     language = languageFromInput;
   } else if (countryFromInput && countryFromInput === "AR") {
     language = "es-AR";
-  } else if (countryFromInput && ["UA", "RU"].includes(countryFromInput)) {
+  } else if (countryFromInput && countryFromInput === "UA") {
     language = "uk";
+  } else if (countryFromInput && countryFromInput === "RU") {
+    language = "ru";
   } else {
     language = "en";
   }
