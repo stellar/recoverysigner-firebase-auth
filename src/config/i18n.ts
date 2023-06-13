@@ -4,13 +4,14 @@ import en from "locales/en/messages";
 import es from "locales/es/messages";
 import esAR from "locales/es-AR/messages";
 import uk from "locales/uk/messages";
+import ru from "locales/ru/messages";
 
 export const catalogs: { [key: string]: Catalog } = {
   en,
   es,
   "es-AR": esAR,
   uk,
-  ru: uk,
+  ru,
 };
 
 export const i18n = setupI18n({
