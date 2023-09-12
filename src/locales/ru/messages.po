@@ -32,13 +32,13 @@ msgstr "Если указанный ниже адрес электронной �
 msgid "Please check your email on your device and click the verification link in the email message to proceed."
 msgstr "Чтобы продолжить, проверьте почтовый ящик на своем устройстве и нажмите на ссылку для подтверждения в электронном письме, которое мы вам прислали."
 
-#: src/config/i18n.ts:15
-#~ msgid "Please update Android WebView to start the session."
-#~ msgstr "Обновите Android WebView, чтобы начать сессию."
+#: src/config/i18n.ts:22
+msgid "Please update Android WebView to start the session."
+msgstr "Обновите Android WebView, чтобы начать сессию."
 
-#: src/config/i18n.ts:16
-#~ msgid "Please update Google Chrome to start the session."
-#~ msgstr "Обновите Google Chrome, чтобы начать сессию."
+#: src/config/i18n.ts:23
+msgid "Please update Google Chrome to start the session."
+msgstr "Обновите Google Chrome, чтобы начать сессию."
 
 #: src/components/ConfirmVerificationEmail.tsx:35
 #: src/components/SendVerificationCode.tsx:45
@@ -59,9 +59,9 @@ msgstr "Отправить код подтверждения"
 msgid "We’ve sent you a verification code:"
 msgstr "Мы отправили вам код подтверждения:"
 
-#: src/config/i18n.ts:17
-#~ msgid "Your device’s browser is not compatible. Please update your browser and Vibrant to the latest version."
-#~ msgstr "На вашем устройстве установлена устаревшая версия браузера. Обновите браузер и приложение Vibrant до последней версии."
+#: src/config/i18n.ts:24
+msgid "Your device’s browser is not compatible. Please update your browser and Vibrant to the latest version."
+msgstr "На вашем устройстве установлена устаревшая версия браузера. Обновите браузер и приложение Vibrant до последней версии."
 
 #: src/components/ConfirmVerificationCode.tsx:34
 #: src/components/ConfirmVerificationEmail.tsx:28
