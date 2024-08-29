@@ -8,7 +8,7 @@ msgstr ""
 "Language: ru\n"
 "Project-Id-Version: vibrant-app\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-06-13 18:45\n"
+"PO-Revision-Date: 2024-08-29 20:30\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
@@ -32,11 +32,11 @@ msgstr "Если указанный ниже адрес электронной �
 msgid "Please check your email on your device and click the verification link in the email message to proceed."
 msgstr "Чтобы продолжить, проверьте почтовый ящик на своем устройстве и нажмите на ссылку для подтверждения в электронном письме, которое мы вам прислали."
 
-#: src/config/i18n.ts:22
+#: src/config/i18n.ts:24
 msgid "Please update Android WebView to start the session."
 msgstr "Обновите Android WebView, чтобы начать сессию."
 
-#: src/config/i18n.ts:23
+#: src/config/i18n.ts:25
 msgid "Please update Google Chrome to start the session."
 msgstr "Обновите Google Chrome, чтобы начать сессию."
 
@@ -59,7 +59,7 @@ msgstr "Отправить код подтверждения"
 msgid "We’ve sent you a verification code:"
 msgstr "Мы отправили вам код подтверждения:"
 
-#: src/config/i18n.ts:24
+#: src/config/i18n.ts:26
 msgid "Your device’s browser is not compatible. Please update your browser and Vibrant to the latest version."
 msgstr "На вашем устройстве установлена устаревшая версия браузера. Обновите браузер и приложение Vibrant до последней версии."
 

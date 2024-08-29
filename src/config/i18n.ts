@@ -5,6 +5,7 @@ import en from "locales/en/messages";
 import es from "locales/es/messages";
 import esAR from "locales/es-AR/messages";
 import fr from "locales/fr/messages";
+import pt from "locales/pt/messages";
 import uk from "locales/uk/messages";
 import ru from "locales/ru/messages";
 
@@ -13,6 +14,7 @@ export const catalogs: { [key: string]: Catalog } = {
   es,
   "es-AR": esAR,
   fr,
+  pt,
   uk,
   ru,
 };

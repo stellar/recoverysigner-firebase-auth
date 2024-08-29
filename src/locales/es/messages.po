@@ -8,7 +8,7 @@ msgstr ""
 "Language: es\n"
 "Project-Id-Version: vibrant-app\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2022-10-20 12:42\n"
+"PO-Revision-Date: 2024-08-29 20:30\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -32,11 +32,11 @@ msgstr "Si la dirección de email, aquí debajo, está asociada con una cuenta, 
 msgid "Please check your email on your device and click the verification link in the email message to proceed."
 msgstr "Por favor, abre en tu celular el correo que te enviamos y haz click en el link de verificación para proceder."
 
-#: src/config/i18n.ts:22
+#: src/config/i18n.ts:24
 msgid "Please update Android WebView to start the session."
 msgstr "Por favor actualiza tu Android WebView para comenzar sesión."
 
-#: src/config/i18n.ts:23
+#: src/config/i18n.ts:25
 msgid "Please update Google Chrome to start the session."
 msgstr "Por favor acutaliza Google Chrome antes de comenzar la sesión."
 
@@ -59,7 +59,7 @@ msgstr "Enviar código de verificación"
 msgid "We’ve sent you a verification code:"
 msgstr "Te hemos enviado un código de verificación:"
 
-#: src/config/i18n.ts:24
+#: src/config/i18n.ts:26
 msgid "Your device’s browser is not compatible. Please update your browser and Vibrant to the latest version."
 msgstr "El navegador en tu dispositivo no es compatible. Por favor actualiza tu navegador y la app de Vibrant a sus últimas versiones."
 
